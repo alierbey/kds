@@ -16,47 +16,14 @@ import plotly.express as px
 
 pio.templates.default = "plotly_dark"
 
-
 app = dash.Dash(external_stylesheets=[dbc.themes.DARKLY])
 
+# df = pd.read_excel("veri1.xlsx")
+# df['Tarih']=df['Tarih'].dt.year
+# df_tarih = df.groupby('Tarih')
 
 
-df = pd.read_excel("veri1.xlsx")
-df['Tarih']=df['Tarih'].dt.year
-df_tarih = df.groupby('Tarih')
 
-
-###### pie #####
-df2 = pd.read_excel("veri2.xlsx")
-
-df_tur = df2.groupby(['Kategori','Tur'])
-#print(df_tur.groups) 
-
-yeap  = {"Teknik": [], "Cevre": [], "Ekonomi":[]}
-
-print("===========")
-print(yeap)
-print("===========")
-
-for kat,tur in df_tur:
-    print(kat)
-    if kat[0] == 'Teknik':
-        yeap["Teknik"].append(kat[1])
-    if kat[0] == 'Cevre':
-        yeap["Cevre"].append(kat[1])
-    if kat[0] == 'Ekonomi':
-        yeap["Ekonomi"].append(kat[1])
-        #print(kat[1])
-
-print(yeap)
-
-
-# values = []
-# for sub_ind in (df.unique()):
-#     values.append(df_tur.get_group(('CO2', sub_ind)))
-# print(values)
-
-#print(df_cat('Cevre'))
 fig = go.Figure()
 
 ###### pie #####
@@ -193,124 +160,107 @@ def render_page_content(pathname):
         ]
     )
 
-@app.callback(
-    Output("time-series-chart", "figure"), 
-    [Input("ticker", "value")])
-def display_time_series(ticker):
-    print(ticker)
-    #fig = px.line(df, x='Tarih', y=ticker, template="plotly_dark")
-    X = np.array(df['Tuketim'])
-    y = np.array(df[ticker])
-    r = sp.stats.pearsonr(X, y) 
+# @app.callback(
+#     Output("time-series-chart", "figure"), 
+#     [Input("ticker", "value")])
+# def display_time_series(ticker):
+#     print(ticker)
+#     #fig = px.line(df, x='Tarih', y=ticker, template="plotly_dark")
+#     X = np.array(df['Tuketim'])
+#     y = np.array(df[ticker])
+#     r = sp.stats.pearsonr(X, y) 
 
-    fig = go.Figure(go.Indicator(
-    mode = "number+gauge+delta",
-    gauge = {'shape': "bullet"},
-    delta = {'reference': 300},
-    value = r[0]*100,
-    domain = {'x': [0.1, 1], 'y': [0.2, 0.9]},
-    title = {'text': "Avg order size"}))
-    return fig
+#     fig = go.Figure(go.Indicator(
+#     mode = "number+gauge+delta",
+#     gauge = {'shape': "bullet"},
+#     delta = {'reference': 300},
+#     value = r[0]*100,
+#     domain = {'x': [0.1, 1], 'y': [0.2, 0.9]},
+#     title = {'text': "Avg order size"}))
+#     return fig
 
 
-@app.callback(
-    Output("time-series-chart2", "figure"), 
-    [Input("ticker2", "value")])
-def display_time_series(ticker):
-    print(ticker)
-    #fig = px.line(df, x='Tarih', y=ticker, template="plotly_dark")
-    X = np.array(df['Tuketim'])
-    y = np.array(df[ticker])
-    r = sp.stats.pearsonr(X, y) 
+# @app.callback(
+#     Output("time-series-chart2", "figure"), 
+#     [Input("ticker2", "value")])
+# def display_time_series(ticker):
+#     print(ticker)
+#     #fig = px.line(df, x='Tarih', y=ticker, template="plotly_dark")
+#     X = np.array(df['Tuketim'])
+#     y = np.array(df[ticker])
+#     r = sp.stats.pearsonr(X, y) 
 
-    fig = go.Figure(go.Indicator(
-    mode = "number+gauge+delta",
-    gauge = {'shape': "bullet"},
-    delta = {'reference': 300},
-    value = r[0]*100,
-    domain = {'x': [0.1, 1], 'y': [0.2, 0.9]},
-    title = {'text': "Avg order size"}))
-    return fig
+#     fig = go.Figure(go.Indicator(
+#     mode = "number+gauge+delta",
+#     gauge = {'shape': "bullet"},
+#     delta = {'reference': 300},
+#     value = r[0]*100,
+#     domain = {'x': [0.1, 1], 'y': [0.2, 0.9]},
+#     title = {'text': "Avg order size"}))
+#     return fig
 
-@app.callback(
-    Output("time-series-chart3", "figure"), 
-    [Input("ticker3", "value")])
-def display_time_series(ticker):
-    print(ticker)
-    #fig = px.line(df, x='Tarih', y=ticker, template="plotly_dark")
-    X = np.array(df['Tuketim'])
-    y = np.array(df[ticker])
-    r = sp.stats.pearsonr(X, y) 
+# @app.callback(
+#     Output("time-series-chart3", "figure"), 
+#     [Input("ticker3", "value")])
+# def display_time_series(ticker):
+#     print(ticker)
+#     #fig = px.line(df, x='Tarih', y=ticker, template="plotly_dark")
+#     X = np.array(df['Tuketim'])
+#     y = np.array(df[ticker])
+#     r = sp.stats.pearsonr(X, y) 
     
-    fig = go.Figure(go.Indicator(
-    mode = "gauge+number",
-    value = r[0],
-    domain = {'x': [0, 1], 'y': [0, 1]},
-    title = {'text': 'Tüketim & ' + ticker},
+#     fig = go.Figure(go.Indicator(
+#     mode = "gauge+number",
+#     value = r[0],
+#     domain = {'x': [0, 1], 'y': [0, 1]},
+#     title = {'text': 'Tüketim & ' + ticker},
     
-    gauge = {
-        'axis': {'range': [-1, 1], 'tickwidth': 1, 'tickcolor': "darkblue"},
-        'bar': {'color': "darkblue"},
-        'bgcolor': "white",
-        'borderwidth': 2,
-        'bordercolor': "gray",
-        # 'steps': [
-        #     {'range': [-1, 0], 'color': 'gray'},
-        #     {'range': [0, r[0]], 'color': 'royalblue'}]
-        }))
-    return fig
+#     gauge = {
+#         'axis': {'range': [-1, 1], 'tickwidth': 1, 'tickcolor': "darkblue"},
+#         'bar': {'color': "darkblue"},
+#         'bgcolor': "white",
+#         'borderwidth': 2,
+#         'bordercolor': "gray",
+#         # 'steps': [
+#         #     {'range': [-1, 0], 'color': 'gray'},
+#         #     {'range': [0, r[0]], 'color': 'royalblue'}]
+#         }))
+#     return fig
 
-@app.callback(
-    Output('map', 'figure'),
-    [Input('slct_year', 'value')]
-)
-
-# def update_graph(option_slctd):
-#     print(option_slctd)
-#     print(type(option_slctd))
-
-def display_time_series(slct_year):
-    fig = go.Figure(data=[go.Bar(
-            x=df_tarih.get_group(slct_year).Periyot, y=df_tarih.get_group(slct_year).kbTuketim,
-            textposition='auto'
-        )])
-    fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
-                  marker_line_width=1.5, opacity=0.6,)
-    fig.update_layout(title_text= 'Aylara göre kişibaşı elektrik tüketimi',template="plotly_dark" )
-    return fig
+# @app.callback(
+#     Output('map', 'figure'),
+#     [Input('slct_year', 'value')]
+# )
 
 
-@app.callback(
-    Output("pie-chart", "figure"), 
-    Input('slct_tur', 'value'),
-    Input('slct_cat', 'value'),
-)
-def set_fig(slct_tur,slct_cat):
-    print(slct_tur + " " + slct_cat )
 
-    df_cat = df2.groupby('Kategori')
-    df_tur = df_cat.get_group(slct_cat)
-    df_son = df_tur.groupby('Tur')
-    df_filter = df_son.get_group(slct_tur)
+# def display_time_series(slct_year):
+#     fig = go.Figure(data=[go.Bar(
+#             x=df_tarih.get_group(slct_year).Periyot, y=df_tarih.get_group(slct_year).kbTuketim,
+#             textposition='auto'
+#         )])
+#     fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
+#                   marker_line_width=1.5, opacity=0.6,)
+#     fig.update_layout(title_text= 'Aylara göre kişibaşı elektrik tüketimi',template="plotly_dark" )
+#     return fig
 
-    fig = px.pie(df_filter, values='Deger', names='Santral', template="plotly_dark")
-    fig.update_layout(title_text= 'Aylara göre kişibaşı elektrik tüketimi' )
-    return fig
 
-@app.callback(
-    Output("slct_tur", "options"), 
-    Input('slct_cat', 'value'),
-)
-def set_cat(x):
-    print("secildi 1")
-    return [{'label': i, 'value': i} for i in yeap[x]]
 
-@app.callback(
-    Output("time-series-chart-graf2", "figure"), 
-    [Input("graf2", "value")])
-def display_time_series(graf2):
-    fig = px.line(df, x='Tarih', y=graf2, template="plotly_dark")
-    return fig
+
+# @app.callback(
+#     Output("slct_tur", "options"), 
+#     Input('slct_cat', 'value'),
+# )
+# def set_cat(x):
+#     print("secildi 1")
+#     return [{'label': i, 'value': i} for i in yeap[x]]
+
+# @app.callback(
+#     Output("time-series-chart-graf2", "figure"), 
+#     [Input("graf2", "value")])
+# def display_time_series(graf2):
+#     fig = px.line(df, x='Tarih', y=graf2, template="plotly_dark")
+#     return fig
 
 if __name__ == "__main__":
     app.run_server(port=8888)
