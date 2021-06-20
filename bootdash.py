@@ -351,4 +351,4 @@ def display_time_series(graf2):
     return fig
 
 if __name__ == "__main__":
-    app.run_server(port=8888)
+    app.run_server(port=80)
