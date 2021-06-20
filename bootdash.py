@@ -7,13 +7,12 @@ import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 import plotly.express as px
-import pandas as pd
 from scipy import stats
 import scipy as sp
 from plotly.subplots import make_subplots
-from dash.dependencies import Input, Output
+import numpy as np
 import plotly.io as pio
-
+import plotly.express as px
 
 pio.templates.default = "plotly_dark"
 
@@ -121,13 +120,7 @@ yeni = html.Div(
         html.Div([
                             html.Div([
                                 html.Div([
-                                    html.H6("Makro Değişkenler ile Tüketim Korelasyonları", style={'text-align': 'center'}),
-                                        html.Div(style={'backgroundColor': colors['background']},
-                                            children=html.Div([
-                                            dcc.Dropdown( id="ticker3", options=[{"label": x, "value": x} for x in df.columns[3:]],value=df.columns[3],clearable=False,),
-                                            dcc.Graph(id="time-series-chart3"),
-                                            ]),
-                                        ),
+                                    
                                 ],className="card-header")            
                             ],className="col-xl-4"),
                      
@@ -135,15 +128,7 @@ yeni = html.Div(
                     html.Div([
                         html.Div([
                             html.Div([
-                                    html.H6("Makro Değişkenler", style={'text-align': 'center'}),
-                                    dcc.Dropdown(
-                                    id="graf2",
-                                    options=[{"label": x, "value": x} 
-                                            for x in df.columns[2:]],
-                                    value=df.columns[2],
-                                    clearable=False,
-                                    ),
-                                    dcc.Graph(id="time-series-chart-graf2"),
+                                   
                             ])
                         ],className="card-header",)            
                     ],className="col-xl-8",)
@@ -158,18 +143,7 @@ yeni = html.Div(
           
       html.Div([
 
-    html.H4("Kişibaşı Elektrik Tüketim Raporu", style={'text-align': 'center'}),
-
-    dcc.Dropdown(id="slct_year",
-                 options=[{"label": x, "value": x} 
-                          for x in df_tarih.groups.keys()],
-                 clearable=False,
-                 multi=False,
-                 value=1986,
-                 style={'width': "40%"}
-                 ),
-
-    dcc.Graph(id='map')
+    
 ])
       
         ],
@@ -179,23 +153,11 @@ yeni = html.Div(
          html.Div([
   html.Div([
        html.Div([
-    html.H4("Kişibaşı Elektrik Tüketim Raporu", style={'text-align': 'center'}),
-    html.P("Kategori:"),
-    dcc.Dropdown(
-        id='slct_cat', 
-        value='Teknik', 
-        options=[{'value': x, 'label': x} 
-                 for x in ['Teknik', 'Cevre', 'Ekonomi']],
-        clearable=False
-    ),
-    html.P("Tür"),
-    dcc.Dropdown(id='slct_tur', value='Uretim'),
+   
+   
     html.Hr(),
-    dcc.Graph(id="pie-chart",figure=fig),
+   
 ])
-  
-      
-
         ],
         className="card-header",)            
         ],
@@ -351,5 +313,4 @@ def display_time_series(graf2):
     return fig
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
-    app.run_server(port=5000)
+    app.run_server(port=8888)
