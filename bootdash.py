@@ -963,8 +963,8 @@ def render_page_content(pathname):
     )
 
 if __name__ == "__main__":
-    app.run_server(host='127.0.0.1')
-    # app.run_server(host='207.154.210.198')
+    #app.run_server(host='127.0.0.1')
+    app.run_server(host='207.154.210.198')
 
 yedek = html.Div(
     [
