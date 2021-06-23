@@ -54,7 +54,7 @@ pageConsumptionData = html.Div(
                          
                     ],style = {'background-color' : style.cardBackColor['back'],'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)',"vertical-align":"middle"})            
                 ],className="col-xl-12"),
-              ],className="row"),
+              ],className="row",style={"height":"100vh"}),
         html.Hr(),
     ], 
 )
@@ -70,5 +70,5 @@ def update_output(value,n_clicks,nclicks):
     print(value, n_clicks)
     if value==None:
         value=0
-    value = value+1
+    value = " "
     return '{}'.format(value)

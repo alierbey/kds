@@ -17,7 +17,7 @@ fig = go.Figure(layout = go.Layout(
 fig.add_trace(go.Indicator(
     mode = "number+delta",
     value = 172060.929,
-    title = {"text": "2019 : 90719.9  - 2030 : 172060.929"},
+    title = {"text": "90719 GWh - 172060 GWh "},
     
     delta = {'reference': 90719.9, 'relative': True},
     domain = {'x': [0, 1], 'y': [0, 1]}))

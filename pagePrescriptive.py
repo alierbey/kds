@@ -20,6 +20,7 @@ pageScriptive = html.Div(
                 html.Div([
             
                     html.Div([
+                        html.H5("Elektrik Tüketiminde Yıllık Değişim Hızı", style = {"padding-top":20, "text-align":"center"}),
                         gauge2.gauge2
                     ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
@@ -28,6 +29,8 @@ pageScriptive = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
+                        
+                        html.H5("Elektrik Tüketim Tahmini", style = {"padding-top":20, "text-align":"center"}),
                             dcc.Graph(figure=electric.fig)
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
@@ -40,6 +43,8 @@ pageScriptive = html.Div(
                 html.Div([
             
                     html.Div([
+                        
+                          html.H5("GSYH (TL Bazlı) Tahmini", style = {"padding-top":20, "text-align":"center"}),
                         dcc.Graph(figure=bl.fig)
                     ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
@@ -60,6 +65,8 @@ pageScriptive = html.Div(
                 html.Div([
             
                     html.Div([
+                       
+                         html.H5(" Kriter Türleri ", style = {"padding-top":20, "text-align":"center"}),
                         dcc.Graph(figure=sb.fig)
                     ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
@@ -70,8 +77,7 @@ pageScriptive = html.Div(
                     html.Div([
                            
                     ])
-                ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
+                ])            
             ],className="col-xl-8",)
         ],className="row"),
        

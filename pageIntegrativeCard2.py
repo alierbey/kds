@@ -17,7 +17,7 @@ fig = go.Figure(layout = go.Layout(
 fig.add_trace(go.Indicator(
     mode = "number+delta",
     value = int(pre_card2.sum()),
-    title = {"text": "2019 : 47783  - 2030 : 131622"},
+    title = {"text": "47783 - 131622"},
     
     delta = {'reference': 47783, 'relative': True},
     domain = {'x': [0, 1], 'y': [0, 1]}))

@@ -34,7 +34,7 @@ pageIntegrative = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
-                        
+                      
                         dcc.Graph(figure=pageIntegrativeCard2.fig)
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
@@ -54,6 +54,7 @@ pageIntegrative = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
+                           html.H5("Verimlilik ", style = {"padding-top":20, "text-align":"center"}),
                            dcc.Graph(figure=pageIntegrative2.fig)
                     ]),
                 ],style = {'background-color' : style.cardBackColor['back'],

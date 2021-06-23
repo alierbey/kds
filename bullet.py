@@ -111,6 +111,7 @@ fig.add_trace(go.Indicator(
 fig.update_layout(height = 400 , margin = {'t':0, 'b':0, 'l':0})
 
 fig.update_layout({
+"font_size":12,
 "plot_bgcolor": "rgba(0, 0, 0, 0)",
 "paper_bgcolor": "rgba(0, 0, 0, 0)",
 })

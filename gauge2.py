@@ -50,7 +50,7 @@ gauge2 = html.Div([
                  clearable=False,
                  multi=False,
                  value=1987,
-                 style={'width': "40%"},
+                 style={'width': "40%","font_color":style.cardBackColor['back'],"padding-left":60},
     ),
     dcc.Graph(id="map")
 ])
@@ -64,7 +64,7 @@ def display(value):
     value = b.loc[value],
     #value = 200,
     domain = {'x': [0, 1], 'y': [0, 1]},
-    title = {'text': "Speed"},
+   
     
     gauge = {
         'axis': {'range': [-1, 1], 'tickwidth': 1, 'tickcolor': "darkblue"},

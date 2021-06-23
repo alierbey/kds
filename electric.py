@@ -107,7 +107,6 @@ trace2 = go.Scatter(
 #     name = 'Tahmin Verileri'
 # )
 layout = go.Layout(
-    title = "Elektrik Tüketim Tahmini",
     xaxis = {'title' : "Tarih"},
     yaxis = {'title' : "MWh"}
 )

@@ -29,10 +29,8 @@ fig = go.Figure(data=[go.Bar(name='Mevcut', x=x, y=y1, marker_color='rgb(55, 83,
 # Customize aspect
 # fig.update_traces(marker_color='rgb(158,202,225)', marker_line_color='rgb(8,48,107)',
 #                   marker_line_width=1.5, opacity=0.6)
-fig.update_layout(title_text='İhtiyacın Tek Santral Türüne Göre Karşılanması Durumunda Gereken Kurulu Güç')
+fig.update_layout(title_text='İhtiyacın Tek Santral Türüne Göre Karşılanması Durumunda')
 fig.update_layout({
-    
-    
     "font_color":"white",
     "plot_bgcolor": "rgba(0, 0, 0, 0)",
     "paper_bgcolor": "rgba(0, 0, 0, 0)",

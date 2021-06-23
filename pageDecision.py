@@ -115,7 +115,7 @@ pageDecision = html.Div(
                          
                     ],style = {'background-color' : style.cardBackColor['back'],'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)',"vertical-align":"middle"})            
                 ],className="col-xl-12"),
-              ],className="row"),
+              ],className="row",style={"height":"100vh"}),
         html.Hr(),
     ], 
 )

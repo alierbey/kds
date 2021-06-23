@@ -7,18 +7,17 @@ fig = go.Figure(layout = go.Layout(
 fig.add_trace(go.Indicator(
     mode = "number+delta",
     value = 401070.357,
-    title = {"text": "2019 : 290446.924 GWh - 2030 : 401070.357 GWh"},
+    title = {"text": "290446 GWh - 401070 GWh"},
     delta = {'reference': 290446.924, 'relative': True},
     domain = {'x': [0, 1], 'y': [0, 1]}))
 
 # fig.update_layout(paper_bgcolor = "midnightblue")
 
 fig.update_layout({
-    
     "height": 300,
     "font_color":"white",
-"plot_bgcolor": "rgba(0, 0, 0, 0)",
-"paper_bgcolor": "rgba(0, 0, 0, 0)",
+    "plot_bgcolor": "rgba(0, 0, 0, 0)",
+    "paper_bgcolor": "rgba(0, 0, 0, 0)",
 })
 
 

@@ -3,13 +3,24 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import style
 
+txtContent = """
+Oluşturulan Karar Destek Sisteminde çok sayıda veri kullanılmakta olup, bu veriler üzerinde çok sayıda veri önişleme yöntemi uygulanmaktadır. Ayrıca uygulanan analitik yöntemlerin çoğu verinin formatına bağlı olarak çalışmaktadır. Bu sebeple yeni veri yüklenebilmesi için aşağıdaki şartların sağlanması gerekmektedir. 
+"""
+
 pageDataUpload = html.Div(
     [
         html.H3("Data Upload"),
               html.Div([
                 html.Div([
                     html.Div([
-                         html.P("Veri ekleme işleminden farklı olarak mevcut verilerin kullanılmayacağı tamamen yeni verilerin kullanıcı tarafından ekleneceği anlatılacak. Önceki menüye benzer şekilde iki seçenek sunulacak fakat bir de kullanıcıya veri Upload alanı verilecek. "),
+                         html.P(txtContent, style = {'padding':"1rem"}),
+
+                         html.Ul([
+                             html.Li("Zaman serisi tahmini için eklenecek veriler; ay zaman periyodunda yer alması, elektrik tüketim miktarı, Gayri Safi yurtiçi Hâsıla, Sanayi Üretim Endeksi gibi teorik olarak elektrik tüketimini etkileyecek verileri içermelidir. "),
+                             html.Li("Santral seçimi için eklenecek veriler; Kurulu güç, Yıllık üretim miktarı, Kapasite faktörü, Yatırım maliyetleri, İşletme ve bakım maliyetleri, Yakıt maliyetleri, Geri ödeme süresi, CO2, CH4, NOX ve SO2 Emisyonları, Arazi kullanımı, İstihdam oluşturma potansiyeli gibi teorik olarak santral seçimini etkileyen verileri içermelidir."),
+                         ]),
+
+                         html.P("Belirtilen şartları sağlayan .xls uzantılı dosyalar veri tabanına eklenirse sistem yeni yüklenen veriler üzerinde çalışacaktır. ", style = {'padding':"1rem"}),
                          html.Hr(),
                          html.Div([
                              html.Div([
@@ -45,7 +56,7 @@ pageDataUpload = html.Div(
                          ],className="row justify-content-md-center"),
                     ],style = {'background-color' : style.cardBackColor['back'],'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)',"vertical-align":"middle"})            
                 ],className="col-xl-12"),
-              ],className="row"),
+              ],className="row",style={"height":"100vh"}),
         html.Hr(),
     ], 
 )

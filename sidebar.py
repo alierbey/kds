@@ -22,7 +22,8 @@ SIDEBAR_STYLE = {
 sidebar = html.Div(
     [
        
-        html.H4("Web Based - EPPDSS"),
+       
+        html.A("Web Based - EPPDSS", href="/", style={"font-size":18, "font-weight": "bold"}),
         html.Hr(),
         dbc.NavItem("DATA"),
         dbc.Nav(

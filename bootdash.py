@@ -12,12 +12,12 @@ from plotly.subplots import make_subplots
 from scipy import stats
 import scipy as sp
 import random
-# import pageHome
+import pageHome
 import pageAvailableData
 import pageAddingData
 import pageDataUpload
 import pageDescriptive
-import pagePredictive
+# import pagePredictive
 import pageEnergyMixData
 import pageConsumptionForecast
 import pageDecision
@@ -90,7 +90,7 @@ def render_page_content(pathname):
     )
 
 if __name__ == "__main__":
-    #app.run_server(debug=True)
+    app.run_server(debug=True)
     #app.run_server(host='127.0.0.1')
-    app.run_server(host='157.230.12.66')
+    #app.run_server(host='157.230.12.66')
 
