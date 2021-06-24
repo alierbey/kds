@@ -54,7 +54,7 @@ pageIntegrative = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
-                           html.H5("Elektrik Üretiminde Planlanan Değişim  ", style = {"padding-top":20, "text-align":"center"}),
+                           html.H5("Verimlilik ", style = {"padding-top":20, "text-align":"center"}),
                            dcc.Graph(figure=pageIntegrative2.fig)
                     ]),
                 ],style = {'background-color' : style.cardBackColor['back'],

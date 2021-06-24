@@ -44,7 +44,7 @@ pageScriptive = html.Div(
             
                     html.Div([
                         
-                          html.H5("GSYH (TL Bazlı) Tahmini", style = {"padding-top":20, "text-align":"center"}),
+                          html.H5("Elektrik Üretiminde Planlanan Değişim", style = {"padding-top":20, "text-align":"center"}),
                         dcc.Graph(figure=bl.fig)
                     ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
