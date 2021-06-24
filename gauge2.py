@@ -67,7 +67,7 @@ def display(value):
    
     
     gauge = {
-        'axis': {'range': [-1, 1], 'tickwidth': 1, 'tickcolor': "darkblue"},
+        'axis': {'range': [-100, 100], 'tickwidth': 1, 'tickcolor': "darkblue"},
         'bar': {'color': "darkblue"},
         'bgcolor': "white",
         'borderwidth': 2,

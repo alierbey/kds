@@ -13,7 +13,7 @@ import style
 
 pageScriptive = html.Div(
     [
-        html.H3("PreScriptive"),
+        html.H3("Prescriptive"),
         html.Hr(),
         html.Div([
             html.Div([
@@ -66,7 +66,7 @@ pageScriptive = html.Div(
             
                     html.Div([
                        
-                         html.H5(" Kriter Türleri ", style = {"padding-top":20, "text-align":"center"}),
+                         html.H5(" Kriter Ağırlıkları ", style = {"padding-top":20, "text-align":"center"}),
                         dcc.Graph(figure=sb.fig)
                     ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
