@@ -35,22 +35,23 @@ sidebar = html.Div(
             vertical=True,
             pills=True,
         ),
-    html.Hr(),
-        dbc.NavItem("WHAT-IF ANALYSIS"),
-        dbc.Nav(
-            [
-                dbc.NavLink("Consumption Data", href="/page-4", active="exact"),
-                dbc.NavLink("Energy Mix Data", href="/page-5", active="exact"),
-            ],
-            vertical=True,
-            pills=True,
-        ),
+   
         html.Hr(),
         dbc.NavItem("ANALYTICS AND OPTIONS"),
         dbc.Nav(
             [
                 dbc.NavLink("Consumption Forecast", href="/page-6", active="exact"),
                 dbc.NavLink("Decision", href="/page-7", active="exact"),
+            ],
+            vertical=True,
+            pills=True,
+        ),
+         html.Hr(),
+        dbc.NavItem("SENSITIVITY ANALYSIS"),
+        dbc.Nav(
+            [
+                dbc.NavLink("What - If", href="/page-4", active="exact"),
+                dbc.NavLink("Goal Seeking", href="/page-5", active="exact"),
             ],
             vertical=True,
             pills=True,

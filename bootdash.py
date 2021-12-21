@@ -17,13 +17,14 @@ import pageAvailableData
 import pageAddingData
 import pageDataUpload
 import pageDescriptive
-import pagePredictive
+# import pagePredictive
 import pageEnergyMixData
 import pageConsumptionForecast
 import pageDecision
 import pagePrescriptive
 import pageIntegrative
 import sidebar
+import dataGlobals
 
 # pio.templates.default = "plotly_dark"
 
@@ -44,6 +45,8 @@ CONTENT_STYLE = {
     "padding": "2rem 1rem",
     "background-color": "#161825",
 }
+
+
 
 content = html.Div(id="page-content", style=CONTENT_STYLE)
 app.layout = html.Div([
@@ -74,8 +77,8 @@ def render_page_content(pathname):
             return pageDecision.pageDecision
     elif pathname == "/page-8":
             return pageDescriptive.pageDescriptive
-    elif pathname == "/page-9":
-            return pagePredictive.pagePredictive
+#     elif pathname == "/page-9":
+#             return pagePredictive.pagePredictive
     elif pathname == "/page-10":
             return pagePrescriptive.pageScriptive
     elif pathname == "/page-11":
@@ -85,12 +88,12 @@ def render_page_content(pathname):
         [
             html.H1("404: Not found", className="text-danger"),
             html.Hr(),
-            html.P(f"The pathname {pathname} was not recognised..."),
+            html.P("The pathname {pathname} was not recognised..."),
         ]
     )
 
 if __name__ == "__main__":
     #app.run_server(debug=True)
-    #app.run_server(host='127.0.0.1')
-    app.run_server(host='157.230.12.66')
+    app.run_server(host='127.0.0.1')
+    #app.run_server(host='157.230.12.66')
 

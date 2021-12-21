@@ -9,22 +9,15 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.io as pio
 from app import app
-# pio.templates.default = "plotly_dark"
 pio.templates.default = "seaborn"
 import style
+import dataGlobals
 
 
-# app = dash.Dash(__name__)
-
-# ---------- Import and clean data (importing csv into pandas)
-df = pd.read_excel("veri1.xlsx")
-
-df['Tarih']=df['Tarih'].dt.year
-
-df_tarih = df.groupby('Tarih').sum()
+df_tarih = dataGlobals.df.groupby('Tarih').sum()
 
 dff = df_tarih
-dff.drop(columns=['SUE','Nufus', 'GSD', 'GSTL', 'GSDp', 'GSTLp', 'kbTuketim'], inplace=True)
+dff.drop(columns=['SUE','Nufus', 'GSD', 'GSTL' ], inplace=True)
 # df.reset_index(inplace=True)
 # print(df[:5])
 

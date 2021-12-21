@@ -33,34 +33,41 @@ pageConsumptionForecast = html.Div(
                           html.Div([
                          html.Table([
                              html.Tr([
-                                html.Td([html.P("Elektrik tüketim tahmini için süre giriniz(Ay)",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
-                                html.Td([html.Div(dcc.Input(id='app1-input-on-submit', type='text', className="form-control",)),]),
+                                html.Td([html.P("Elektrik tüketim tahmini için yıl seçiniz",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
+                                dcc.Dropdown(
+                                    id='slct_cat', 
+                                    value='Teknik', 
+                                    options=[{'value': x, 'label': x} 
+                                            for x in range(2021,2041)],
+                                    clearable=False
+                                ),
+
                                 html.Td([]),
                                 html.Td([]),
                              ]),
-                             html.Tr([
-                                html.Td([html.P("Elektrik tüketim tahmini için kullanılacak algoritmayı seçiniz.",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})]),
-                                html.Td([]),
-                                html.Td([]),
-                                html.Td([]),
-                             ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
-                            html.Tr([
-                                html.Td([]),
-                                html.Td([html.Div(
-                                    dcc.RadioItems(
-                                            options=[
-                                                {'label': 'Doğrusal Regresyon', 'value': 'NYC'},
-                                                 {'label': 'Çok Değişkenli Doğrusal Regresyon', 'value': 'dsf'},
-                                                  {'label': 'Yinelenen Sinir Ağı (RNN)', 'value': 'gdfg'},
-                                                  {'label': 'Uzun Kısa Süreli Bellek (LSTM)', 'value': 'dfg'},
-                                            ],
-                                            value='MTL',
-                                            labelStyle={'display': 'block'}
-                                        )  
-                                )]),
-                                html.Td([]),
-                                html.Td([]),
-                            ],style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
+                            #  html.Tr([
+                            #     html.Td([html.P("Elektrik tüketim tahmini için kullanılacak algoritmayı seçiniz.",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})]),
+                            #     html.Td([]),
+                            #     html.Td([]),
+                            #     html.Td([]),
+                            #  ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
+                            # html.Tr([
+                            #     html.Td([]),
+                            #     html.Td([html.Div(
+                            #         dcc.RadioItems(
+                            #                 options=[
+                            #                     {'label': 'Doğrusal Regresyon', 'value': 'NYC'},
+                            #                      {'label': 'Çok Değişkenli Doğrusal Regresyon', 'value': 'dsf'},
+                            #                       {'label': 'Yinelenen Sinir Ağı (RNN)', 'value': 'gdfg'},
+                            #                       {'label': 'Uzun Kısa Süreli Bellek (LSTM)', 'value': 'dfg'},
+                            #                 ],
+                            #                 value='MTL',
+                            #                 labelStyle={'display': 'block'}
+                            #             )  
+                            #     )]),
+                            #     html.Td([]),
+                            #     html.Td([]),
+                            # ],style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
                            
                             
                               
