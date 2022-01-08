@@ -9,7 +9,7 @@ from app import app
 
 
 
-df2 = pd.read_excel("veri2_old.xlsx")
+df2 = pd.read_excel("veri2_2.xlsx")
 
 df_tur = df2.groupby(['Kategori','Tur'])
 #print(df_tur.groups) 
@@ -32,12 +32,6 @@ grafkriterDegerlendirmesi = html.Div([
                                 html.Hr(),
                                 dcc.Graph(id="pie-chart",figure=fig),
                             ],style = {"margin":"1rem"})
-
-
-
-
-
-
 
 
 yeap  = {"Teknik": [], "Cevre": [], "Ekonomi":[]}

@@ -7,7 +7,7 @@ from app import app
 import dataGlobals
 
 grafMakroDegiskenler =  html.Div([
-                            html.H6("Makro Değişkenler", style={'text-align': 'center',"margin":"1rem"}),
+                            html.H6("Makro Faktörlerin Yıllık Değişimi", style={'text-align': 'center',"margin":"1rem"}),
                             dcc.Dropdown(id="graf2",
                                 options=[{"label": x, "value": x} 
                                             for x in dataGlobals.df.columns[2:]],

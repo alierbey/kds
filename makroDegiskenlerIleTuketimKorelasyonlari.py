@@ -17,7 +17,7 @@ fig = go.Figure()
 
 
 makroDegiskenlerIleTuketimKorelasyonlari = html.Div([
-                            html.H6("Makro Değişkenler ile Tüketim Korelasyonları", style={'text-align': 'center',"margin":"1rem"}),
+                            html.H6("Makro Faktorler ile Elektrik Tüketini Arasındaki İlişki", style={'text-align': 'center',"margin":"1rem"}),
                                dcc.Dropdown(
                                     id="ticker",
                                     options=[{"label": x, "value": x} 

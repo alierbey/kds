@@ -53,3 +53,7 @@ def reset_manipule():
     global df_manipule_tarih
     df_manipule_tarih =  df.groupby('Tarih')
     print("----> veriler resetlendi")
+
+
+# w_son global değişkeni decision sayfasındaki seçime bağlı olarak değişmektedir.
+w_son = 0

@@ -5,6 +5,8 @@ import dash_core_components as dcc
 
 import plotly.io as pio
 import sc3
+# import sc2
+import sc1
 
 
 
@@ -18,90 +20,33 @@ pageIntegrative = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
-                       dcc.Graph(figure=sc3.fig)
-
+                     
+                        dcc.Graph(figure=sc1.fig)
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
             ],className="col-xl-12",),
+            html.Hr(),
             html.Div([
                 html.Div([
                     html.Div([
-                      
+                    #   dcc.Graph(figure=sc2.fig)
                         
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
-            ],className="col-xl-4",),
+            ],className="col-xl-12",),
+            html.Hr(),
              html.Div([
                 html.Div([
                     html.Div([
-                             
+                               dcc.Graph(figure=sc3.fig)
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
-            ],className="col-xl-4",)
+            ],className="col-xl-12",)
         ],className="row"),
-        html.Hr(),
-                html.Div([
-            html.Div([
-                html.Div([
-                    html.Div([
-                           html.H5("Verimlilik ", style = {"padding-top":20, "text-align":"center"}),
-                           
-                    ]),
-                ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'}),          
-            ],className="col-xl-6",),
-            html.Div([
-                html.Div([
-                    html.Div([
-                      
-                    ])
-                ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
-            ],className="col-xl-6",)
-        ],className="row"),
-        html.Hr(),
-        html.Div([
-            html.Div([
-                html.Div([
-                    html.Div([
-                           
-                    ]),
-                ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'}),          
-            ],className="col-xl-6",),
-            html.Div([
-                html.Div([
-                    html.Div([
-                      
-                    ])
-                ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
-            ],className="col-xl-6",)
-        ],className="row"),
-        html.Hr(),
-        html.Div([
-            html.Div([
-                html.Div([
-                    html.Div([
-                    
-                    ]),
-                ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'}),          
-            ],className="col-xl-6",),
-            html.Div([
-                html.Div([
-                    html.Div([
-                      
-                    ])
-                ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
-            ],className="col-xl-6",),
-            
-        ],className="row"),
-        
+        html.Hr(),   
        
     ], 
 )

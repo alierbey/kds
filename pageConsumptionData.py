@@ -28,7 +28,7 @@ pageConsumptionData = html.Div(
                              html.Tr([
                                 html.Td([html.P("Elektrik tüketim verileri",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
                                 html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
-                                html.Td([html.Div(dcc.Input(id='input-tuketim-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                html.Td([html.Div(dcc.Input(id='input-tuketim-on-submit', value = 0, type='text', className="form-control", style={"color": "gray"} )),]),
                                 
                                   html.Td([html.Div(
                                     dcc.RadioItems(
@@ -38,7 +38,7 @@ pageConsumptionData = html.Div(
                                                 {'label': 'Azalt', 'value': -1},
                                             ],
                                             value=0,
-                                            labelStyle={'display': 'inline-block'}
+                                            labelStyle={'display': 'inline-block', 'padding': 15, }
                                         )  
                                 )]),
 
@@ -47,9 +47,9 @@ pageConsumptionData = html.Div(
                              ]),
 
                              html.Tr([
-                                html.Td([html.P("gsd",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
+                                html.Td([html.P("GSD",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
                                 html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
-                                html.Td([html.Div(dcc.Input(id='input-gsd-on-submit', value = 0,type='text', className="form-control", style={"color": "white"} )),]),
+                                html.Td([html.Div(dcc.Input(id='input-gsd-on-submit', value = 0,type='text', className="form-control", style={"color": "gray"} )),]),
                                   html.Td([html.Div(
                                     dcc.RadioItems(
                                             id='gsdRadio',
@@ -58,15 +58,15 @@ pageConsumptionData = html.Div(
                                                 {'label': 'Azalt', 'value': -1},
                                             ],
                                             value=0,
-                                            labelStyle={'display': 'inline-block'}
+                                            labelStyle={'display': 'inline-block', 'padding': 15, }
                                         )  
                                 )]), 
                              ]),
 
                               html.Tr([
-                                html.Td([html.P("gstl",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
+                                html.Td([html.P("GSTL",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
                                 html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
-                                html.Td([html.Div(dcc.Input(id='input-gstl-on-submit', value = 0,type='text', className="form-control", style={"color": "white"} )),]),
+                                html.Td([html.Div(dcc.Input(id='input-gstl-on-submit', value = 0,type='text', className="form-control", style={"color": "gray"} )),]),
                                   html.Td([html.Div(
                                     dcc.RadioItems(
                                             id='gstlRadio',
@@ -75,15 +75,15 @@ pageConsumptionData = html.Div(
                                                 {'label': 'Azalt', 'value': -1},
                                             ],
                                             value=0,
-                                            labelStyle={'display': 'inline-block'}
+                                            labelStyle={'display': 'inline-block', 'padding': 15, }
                                         )  
                                 )]), 
                              ]),
 
  html.Tr([
-                                html.Td([html.P("nufus",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
+                                html.Td([html.P("Nüfus",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
                                 html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
-                                html.Td([html.Div(dcc.Input(id='input-nufus-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                html.Td([html.Div(dcc.Input(id='input-nufus-on-submit', value = 0, type='text', className="form-control", style={"color": "gray"} )),]),
                                   html.Td([html.Div(
                                     dcc.RadioItems(
                                             id='nufusRadio',
@@ -92,7 +92,7 @@ pageConsumptionData = html.Div(
                                                 {'label': 'Azalt', 'value': -1},
                                             ],
                                             value=0,
-                                            labelStyle={'display': 'inline-block'}
+                                            labelStyle={'display': 'inline-block', 'padding': 15, }
                                         )  
                                 )]), 
                              ]),
@@ -100,9 +100,9 @@ pageConsumptionData = html.Div(
 
 
  html.Tr([
-                                html.Td([html.P("sue",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
+                                html.Td([html.P("SUE",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
                                 html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
-                                html.Td([html.Div(dcc.Input(id='input-sue-on-submit', value = 0,type='text', className="form-control", style={"color": "white"} )),]),
+                                html.Td([html.Div(dcc.Input(id='input-sue-on-submit', value = 0,type='text', className="form-control", style={"color": "gray"} )),]),
                                   html.Td([html.Div(
                                     dcc.RadioItems(
                                             id='sueRadio',
@@ -111,40 +111,13 @@ pageConsumptionData = html.Div(
                                                 {'label': 'Azalt', 'value': -1},
                                             ],
                                             value=0,
-                                            labelStyle={'display': 'inline-block'}
+                                            labelStyle={'display': 'inline-block', 'padding': 15, }
                                         )  
                                 )]), 
                              ]),
 
 
-                            #  html.Tr([
-                            #     html.Td([html.P("Gayri Safi Yurtiçi Hasıla (Dolar)",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})]),
-                            #     html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
-                            #     html.Td([html.Div(dcc.Input(id='app1-gsd-input-on-submit', type='text', className="form-control", style={"color": "white"} )),]),
-                            #     html.Td([html.Button('Artır', id='app1-gsd-submit-val-plus',  n_clicks=0, className = "btn btn-warning")]),
-                            #     html.Td([html.Button('Azalt', id='app1-gsd-submit-val-minus',  n_clicks=0,  className = "btn btn-danger"),]),
-                            #  ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
-                            #   html.Tr([
-                            #     html.Td([html.P("Gayri Safi Yurtiçi Hasıla (Türk Lirası)",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})]),
-                            #     html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
-                            #     html.Td([html.Div(dcc.Input(id='app1-input-on-submit', type='text', className="form-control", style={"color": "white"} )),]),
-                            #     html.Td([html.Button('Artır', id='app1-submit-val-plus', n_clicks=0, className = "btn btn-warning")]),
-                            #     html.Td([html.Button('Azalt', id='app1-submit-val-minus', n_clicks=0,  className = "btn btn-danger"),]),
-                            #  ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
-                            #   html.Tr([
-                            #     html.Td([html.P("Sanayi Üretim Endeksi",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})]),
-                            #     html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
-                            #     html.Td([html.Div(dcc.Input(id='app1-input-on-submit', type='text', className="form-control", style={"color": "white"} )),]),
-                            #     html.Td([html.Button('Artır', id='app1-submit-val-plus', n_clicks=0, className = "btn btn-warning")]),
-                            #     html.Td([html.Button('Azalt', id='app1-submit-val-minus', n_clicks=0,  className = "btn btn-danger"),]),
-                            #  ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
-                            #   html.Tr([
-                            #     html.Td([html.P("Nüfus",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})]),
-                            #     html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
-                            #     html.Td([html.Div(dcc.Input(id='app1-input-on-submit', type='text', className="form-control", style={"color": "white"} )),]),
-                            #     html.Td([html.Button('Artır', id='app1-submit-val-plus', n_clicks=0, className = "btn btn-warning")]),
-                            #     html.Td([html.Button('Azalt', id='app1-submit-val-minus', n_clicks=0,  className = "btn btn-danger"),]),
-                            #  ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
+                           
 
                              html.Tr([
                                 html.Td([]),
@@ -154,7 +127,7 @@ pageConsumptionData = html.Div(
 
                                 html.Td([html.Button('Uygula', id='submit-val', n_clicks=0, className = "btn btn-warning")]),
                                 html.Td([html.Button('RESET', id='submit-val-res',  n_clicks=0, className = "btn btn-danger")]),
-                                html.Div(id='container-button-basic',children='Enter a value and press submit')
+                                html.Div(id='container-button-basic',children='')
                                 
                              ]),
                          ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
@@ -193,11 +166,11 @@ nufusDegisim = 0
     )
     
 def update_output(n_clicks, tuketimValue, tuketimDurum, gsdValue, gsdDurum, gstlValue, gstlDurum, nufusValue, nufusDurum, sueValue, sueDurum):
-    print('Elektrik tüketim verisi %{} {}'.format(tuketimValue,tuketimDurum))
-    print('gsd  verisi %{} {}'.format(gsdValue,gsdDurum))
-    print('gstl  verisi %{} {}'.format(gstlValue,gstlDurum))
-    print('nufus  verisi %{} {}'.format(nufusValue,nufusDurum))
-    print('sue  verisi %{} {}'.format(sueValue,sueDurum))
+    # print('Elektrik tüketim verisi %{} {}'.format(tuketimValue,tuketimDurum))
+    # print('gsd  verisi %{} {}'.format(gsdValue,gsdDurum))
+    # print('gstl  verisi %{} {}'.format(gstlValue,gstlDurum))
+    # print('nufus  verisi %{} {}'.format(nufusValue,nufusDurum))
+    # print('sue  verisi %{} {}'.format(sueValue,sueDurum))
 
     yuzdeler = [float(tuketimValue), float(gsdValue), float(gstlValue), float(nufusValue), float(sueValue)]
     durum = [tuketimDurum, gsdDurum, gstlDurum, nufusDurum, sueDurum]
@@ -211,10 +184,7 @@ def update_output(n_clicks, tuketimValue, tuketimDurum, gsdValue, gsdDurum, gstl
 
     dataGlobals.veriEdit(hesap)
 
-    return '{}{}'.format(
-        tuketimValue,
-        n_clicks
-    )
+    return ""
 
 
 

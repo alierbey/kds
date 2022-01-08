@@ -6,6 +6,8 @@ from dash.dependencies import Input, Output
 # from bootdash import app
 from app import app
 import style
+import w1 as w1
+import numpy as np
 
 # txtContent1 = """
 # Elektrik tahmini temelde bir 
@@ -35,14 +37,23 @@ pageDecision = html.Div(
         html.Div([
                 html.Div([
                     html.Div([
-                        html.Div(
-                            html.Button('Tüm kriterleri aralıklarını kendim girmek istiyorum', id='submit-btn1-val', n_clicks=0 , className = "btn btn-dark", style = {"font-size": "22px", "color": "white","height":"150px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"})
-                         ),
+                       html.P('Tüm kriterleri eşit aralıkta kabul ederek devam etmek istiyorum', style = {"font-size": "18px", "padding": "20px", "color": "white","height":"80px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
+                        html.Div([
+ html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', style = {"font-size": "16px", "padding": "20px", "color": "white"}),
+                           html.Center([
+                              
+html.Button('Uygula', id='submit-btn1-val', n_clicks=0 , className = "btn btn-info", style = {"margin":"20px","font-size": "18px", "color": "white", "vertical-align":"middle"})
+                           ]),
+                            
+                         ] ),
                     ],style = {'background-color' : style.cardBackColor['back'],'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)',"vertical-align":"middle"})            
                 ],className="col-xl-6"),              
                     html.Div([
+                        html.P('Tüm kriter ağırlıklarını ENTROPİ yöntemi ile belirlemek istiyorum.', style = {"font-size": "18px", "padding": "20px", "color": "white","height":"80px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
                         html.Div([
-                            html.Button('Tüm kriterleri aralıklarını kendim girmek istiyorum', id='submit-btn2-val', n_clicks=0, className = "btn btn-dark", style = {"font-size": "22px", "color": "white","height":"150px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"})
+                           html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', style = {"font-size": "16px", "padding": "20px", "color": "white"}),
+                         html.Center([   html.Button('Uygula', id='submit-btn2-val', n_clicks=0, className = "btn btn-info", style = {"margin":"20px","font-size": "18px", "color": "white", "vertical-align":"middle"})
+                         ]),
                     ],style = {'background-color' : style.cardBackColor['back'],'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)',"vertical-align":"middle"})            
                 ],className="col-xl-6"),
               ],className="row"),
@@ -53,6 +64,8 @@ pageDecision = html.Div(
                     html.Div([
                         html.Div([
 
+
+html.P('Tüm kriter ağırlıklarını kendim girmek istiyorum.', style = {"font-size": "18px", "padding": "20px", "color": "white","height":"80px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
                            html.Table([
                                html.Tr(
                                     [
@@ -62,39 +75,39 @@ pageDecision = html.Div(
                                     html.Tr(
                                     [
                                    html.Td(html.P("Üretim")),
-                                    html.Td([html.Div(dcc.Input(id='input-uretim-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                    html.Td([html.Div(dcc.Input(id='input-uretim-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                     ]),
                                 html.Tr([
                                    html.Td(html.P("Kurulu Güç")),
-                                   html.Td([html.Div(dcc.Input(id='input-kuruluGuc-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-kuruluGuc-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("İşletme Ömrü")),
-                                   html.Td([html.Div(dcc.Input(id='input-isletmeOmru-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-isletmeOmru-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Verimlilik")),
-                                   html.Td([html.Div(dcc.Input(id='input-verimlilik-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-verimlilik-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Kapasite Faktörü")),
-                                   html.Td([html.Div(dcc.Input(id='input-kapasiteFaktoru-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-kapasiteFaktoru-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Yatırım Maliyeti")),
-                                   html.Td([html.Div(dcc.Input(id='input-yatirimMaliyeti-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-yatirimMaliyeti-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("İşletme Maliyeti")),
-                                   html.Td([html.Div(dcc.Input(id='input-isletmeMaliyeti-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-isletmeMaliyeti-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("İstihdam")),
-                                   html.Td([html.Div(dcc.Input(id='input-istihdam-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-istihdam-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Geri Ödeme Süresi")),
-                                   html.Td([html.Div(dcc.Input(id='input-geriOdemeSuresi-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-geriOdemeSuresi-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(
@@ -104,7 +117,7 @@ pageDecision = html.Div(
                                          ]
                                       )
                                    ),
-                                   html.Td([html.Div(dcc.Input(id='input-CO2-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-CO2-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                      html.Tr([
                                    html.Td(
@@ -114,7 +127,7 @@ pageDecision = html.Div(
                                          ]
                                       )
                                    ),
-                                   html.Td([html.Div(dcc.Input(id='input-CO-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-CO-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                      html.Tr([
                                    html.Td(
@@ -124,7 +137,7 @@ pageDecision = html.Div(
                                          ]
                                       )
                                    ),
-                                   html.Td([html.Div(dcc.Input(id='input-NOX-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-NOX-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                      html.Tr([
                                    html.Td(
@@ -134,14 +147,14 @@ pageDecision = html.Div(
                                          ]
                                       )
                                    ),
-                                   html.Td([html.Div(dcc.Input(id='input-SO2-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-SO2-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Arazi Kullanımı")),
-                                   html.Td([html.Div(dcc.Input(id='input-araziKullanimi-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-araziKullanimi-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                            ]),
-                            html.Button('Uygula', id='submit-btn3-val', n_clicks=0, className = "btn btn-dark", style = {"font-size": "14px", "color": "white","height":"50px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
+                            html.Button('Uygula', id='submit-btn3-val', n_clicks=0, className = "btn btn-info", style = {"margin":"20px","font-size": "18px", "color": "white", "vertical-align":"middle"}),
                             html.Div(id='my-output2'),
                             
                      ] ),
@@ -149,6 +162,7 @@ pageDecision = html.Div(
                 ],className="col-xl-6"),              
                     html.Div([
                         html.Div([
+                           html.P('Tüm kriter ağırlıklarını SWARA yöntemi ile belirlemek istiyorum.', style = {"font-size": "18px", "padding": "20px", "color": "white","height":"80px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
                               html.Table([
                                html.Tr(
                                     [
@@ -158,57 +172,57 @@ pageDecision = html.Div(
                                     html.Tr(
                                     [
                                        html.Td(html.P("Üretim")),
-                                       html.Td([html.Div(dcc.Input(id='input-uretim-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                       html.Td([html.Div(dcc.Input(id='input-uretim-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                        html.Td(html.P(id = "my-sira1", children = "")),
-                                       html.Td([html.Div(dcc.Input(id='input-sira1-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                       html.Td([html.Div(dcc.Input(id='input-sira1-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                     ]),
                                 html.Tr([
                                    html.Td(html.P("Kurulu Güç")),
-                                   html.Td([html.Div(dcc.Input(id='input-kuruluGuc-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-kuruluGuc-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira2", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira2-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira2-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("İşletme Ömrü")),
-                                   html.Td([html.Div(dcc.Input(id='input-isletmeOmru-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-isletmeOmru-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira3", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira3-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira3-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Verimlilik")),
-                                   html.Td([html.Div(dcc.Input(id='input-verimlilik-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-verimlilik-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira4", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira4-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira4-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Kapasite Faktörü")),
-                                   html.Td([html.Div(dcc.Input(id='input-kapasiteFaktoru-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-kapasiteFaktoru-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira5", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira5-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira5-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Yatırım Maliyeti")),
-                                   html.Td([html.Div(dcc.Input(id='input-yatirimMaliyeti-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-yatirimMaliyeti-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira6", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira6-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira6-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("İşletme Maliyeti")),
-                                   html.Td([html.Div(dcc.Input(id='input-isletmeMaliyeti-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-isletmeMaliyeti-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira7", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira7-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira7-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("İstihdam")),
-                                   html.Td([html.Div(dcc.Input(id='input-istihdam-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-istihdam-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira8", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira8-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira8-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Geri Ödeme Süresi")),
-                                   html.Td([html.Div(dcc.Input(id='input-geriOdemeSuresi-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-geriOdemeSuresi-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira9", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira9-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira9-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(
@@ -218,9 +232,9 @@ pageDecision = html.Div(
                                          ]
                                       )
                                    ),
-                                   html.Td([html.Div(dcc.Input(id='input-CO2-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-CO2-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira10", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira10-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira10-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                      html.Tr([
                                    html.Td(
@@ -230,9 +244,9 @@ pageDecision = html.Div(
                                          ]
                                       )
                                    ),
-                                   html.Td([html.Div(dcc.Input(id='input-CO-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-CO-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira11", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira11-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira11-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                      html.Tr([
                                    html.Td(
@@ -242,9 +256,9 @@ pageDecision = html.Div(
                                          ]
                                       )
                                    ),
-                                   html.Td([html.Div(dcc.Input(id='input-NOX-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-NOX-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira12", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira12-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira12-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                      html.Tr([
                                    html.Td(
@@ -254,20 +268,20 @@ pageDecision = html.Div(
                                          ]
                                       )
                                    ),
-                                   html.Td([html.Div(dcc.Input(id='input-SO2-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-SO2-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira13", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira13-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira13-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                                 html.Tr([
                                    html.Td(html.P("Arazi Kullanımı")),
-                                   html.Td([html.Div(dcc.Input(id='input-araziKullanimi-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-araziKullanimi-sira-on-submit', value = 0, type='text', className="form-control", style={"width":"55px","color": "gray"} )),]),
                                    html.Td(html.P(id = "my-sira14", children = "")),
-                                   html.Td([html.Div(dcc.Input(id='input-sira14-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                   html.Td([html.Div(dcc.Input(id='input-sira14-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
                            ]),
-                            html.Button('Sırala', id='submit-btn4-val', n_clicks=0, className = "btn btn-dark", style = {"margin" : "20px","font-size": "14px", "color": "white","height":"50px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
-                            html.Button('Uygula', id='submit-btn5-val', n_clicks=0, className = "btn btn-dark", style = {"margin" : "20px","font-size": "14px", "color": "white","height":"50px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
-                            html.Div(id='my-output2'),
+                            html.Button('Sırala', id='submit-btn4-val', n_clicks=0, className = "btn btn-secondary", style = {"margin":"20px","font-size": "18px", "color": "white", "vertical-align":"middle"}),
+                            html.Button('Uygula', id='submit-btn5-val', n_clicks=0, className = "btn btn-info", style = {"margin":"20px","font-size": "18px", "color": "white", "vertical-align":"middle"}),
+                            html.Div(id='my-output3'),
                             
                      
                             
@@ -291,6 +305,7 @@ tempListem = [i for i in range(14)]
 @app.callback(
     dash.dependencies.Output('my-output', component_property='children'),
     dash.dependencies.Output('my-output2', component_property='children'),
+    dash.dependencies.Output('my-output3', component_property='children'),
     dash.dependencies.Output('my-sira1', component_property='children'),
     dash.dependencies.Output('my-sira2', component_property='children'),
     dash.dependencies.Output('my-sira3', component_property='children'),
@@ -397,25 +412,28 @@ def update_output(n_clicks1,n_clicks2, n_clicks3, n_clicks4, n_clicks5,
             sira13,
             sira14
             ):
-    print("inputUretim", inputUretim)
-    print("inputKuruluGuc", inputKuruluGuc)
-    print("inputIsletmeOmru", inputIsletmeOmru) 
-    print("inputVerimlilik", inputVerimlilik)
-    print("inputKapasiteFaktoru", inputKapasiteFaktoru)
-    print("inputYatirimMaliyeti", inputYatirimMaliyeti)
-    print("inputIsletmeMaliyeti", inputIsletmeMaliyeti)
-    print("inputIstihdam",  inputIstihdam) 
-    print("inputGeriOdemeSuresi", inputGeriOdemeSuresi)
-    print("inputCO2", inputCO2)
-    print("inputCO", inputCO)
-    print("inputNOX", inputNOX)
-    print("inputSO2", inputSO2)
-    print("inputAraziKullanimi", inputAraziKullanimi) 
+   #  print("inputUretim", inputUretim)
+   #  print("inputKuruluGuc", inputKuruluGuc)
+   #  print("inputIsletmeOmru", inputIsletmeOmru) 
+   #  print("inputVerimlilik", inputVerimlilik)
+   #  print("inputKapasiteFaktoru", inputKapasiteFaktoru)
+   #  print("inputYatirimMaliyeti", inputYatirimMaliyeti)
+   #  print("inputIsletmeMaliyeti", inputIsletmeMaliyeti)
+   #  print("inputIstihdam",  inputIstihdam) 
+   #  print("inputGeriOdemeSuresi", inputGeriOdemeSuresi)
+   #  print("inputCO2", inputCO2)
+   #  print("inputCO", inputCO)
+   #  print("inputNOX", inputNOX)
+   #  print("inputSO2", inputSO2)
+   #  print("inputAraziKullanimi", inputAraziKullanimi) 
     global button1Tiklandi
     global button2Tiklandi
     global button3Tiklandi
     global button4Tiklandi
     global button5Tiklandi
+    global reelListe
+    global reelListem
+    global tempListem
 
     if n_clicks1 == 0 and n_clicks2 == 0 and n_clicks3 ==  0 and n_clicks4 == 0 and n_clicks5 == 0:
         button1Tiklandi = 0 
@@ -423,6 +441,9 @@ def update_output(n_clicks1,n_clicks2, n_clicks3, n_clicks4, n_clicks5,
         button3Tiklandi = 0 
         button4Tiklandi = 0 
         button5Tiklandi = 0 
+        reelListe = []
+        reelListem = [i for i in range(14)]
+        tempListem = [i for i in range(14)]
 
 
     print(n_clicks1, n_clicks2)
@@ -430,31 +451,41 @@ def update_output(n_clicks1,n_clicks2, n_clicks3, n_clicks4, n_clicks5,
 
     if n_clicks1 >  button1Tiklandi:
         print("Button1 Tıklandı")
+        w1.secim1Uygula()
         button1Tiklandi += 1
+        return 'Button 1 seçildi', "", "","","","","","","","","","","","","","",""
     
 
     if n_clicks2 > button2Tiklandi:
         print("Button2 Tıklandı")
+        w1.secim2Uygula()
         button2Tiklandi += 1
+        return 'Button 2 seçildi', "", "","","","","","","","","","","","","","",""
 
     if n_clicks3 > button3Tiklandi:
         print("Button3 Tıklandı")
         button3Tiklandi += 1
 
+        w = np.array([float(inputUretim) ,float(inputKuruluGuc) , float(inputIsletmeOmru) , float(inputVerimlilik) , float(inputKapasiteFaktoru) , float(inputYatirimMaliyeti) , float(inputIsletmeMaliyeti) , float(inputIstihdam) , float(inputGeriOdemeSuresi) , float(inputCO2) , float(inputCO) , float(inputNOX) , float(inputSO2) , float(inputAraziKullanimi) ])
+        
         toplam = float(inputUretim) + float(inputKuruluGuc) + float(inputIsletmeOmru) + float(inputVerimlilik) + float(inputKapasiteFaktoru) + float(inputYatirimMaliyeti) + float(inputIsletmeMaliyeti) + float(inputIstihdam) + float(inputGeriOdemeSuresi) + float(inputCO2) + float(inputCO) + float(inputNOX) + float(inputSO2) + float(inputAraziKullanimi) 
+
 
         if toplam != 1:
             print()
-            return '', "Toplam 1 olması gerekiyor", ""
+            return '', "Toplam 1 olması gerekiyor", "","","","","","","","","","","","","","",""
+        else:
+           w1.secim3Uygula(w)
 
     
     
 
     global y
-    global reelListe
-    global reelListem
+   #  global reelListe
+   #  global reelListem
 
     if n_clicks4 > button4Tiklandi:
+        reelListe = []
 
         print("-----yeap------")
         x = {"Üretim" :  int(inputUretimSira), 
@@ -497,17 +528,11 @@ def update_output(n_clicks1,n_clicks2, n_clicks3, n_clicks4, n_clicks5,
         
       # reelListe.add(inputUretimSira)
         
-      
-   
-
-
-
-        
 
         print(reelListe)
         print("Button4 Tıklandı")
         button4Tiklandi += 1
-        return "", "", list(y)[0], list(y)[1], list(y)[2], list(y)[3],list(y)[4], list(y)[5], list(y)[6], list(y)[7],list(y)[8], list(y)[9], list(y)[10], list(y)[11],list(y)[12], list(y)[13],
+        return "", ""," Veriler Sıralandı ", list(y)[0], list(y)[1], list(y)[2], list(y)[3],list(y)[4], list(y)[5], list(y)[6], list(y)[7],list(y)[8], list(y)[9], list(y)[10], list(y)[11],list(y)[12], list(y)[13],
         #return "","","","","","","","","","","","","","","",""
       
    
@@ -518,35 +543,36 @@ def update_output(n_clicks1,n_clicks2, n_clicks3, n_clicks4, n_clicks5,
          print("Button 5 Tıklandı")
          print(reelListe)
 
-         tempListem[0] = sira1
-         tempListem[1] = sira2
-         tempListem[2] = sira3
-         tempListem[3] = sira4
-         tempListem[4] = sira5
-         tempListem[5] = sira6
-         tempListem[6] = sira7
-         tempListem[7] = sira8
-         tempListem[8] = sira9
-         tempListem[9] = sira10
-         tempListem[10] = sira11
-         tempListem[11] = sira12
-         tempListem[12] = sira13
-         tempListem[13] = sira14
+         tempListem[0] = float(sira1)
+         tempListem[1] = float(sira2)
+         tempListem[2] = float(sira3)
+         tempListem[3] = float(sira4)
+         tempListem[4] = float(sira5)
+         tempListem[5] = float(sira6)
+         tempListem[6] = float(sira7)
+         tempListem[7] = float(sira8)
+         tempListem[8] = float(sira9)
+         tempListem[9] = float(sira10)
+         tempListem[10] = float(sira11)
+         tempListem[11] = float(sira12)
+         tempListem[12] = float(sira13)
+         tempListem[13] = float(sira14)
 
 
     
+         w1.secim4Uygula(np.array(tempListem), reelListe)
 
-         for i in range(14):
-            reelListem[i] = tempListem[reelListe[i]-1]
+         # for i in range(14):
+         #    reelListem[i] = tempListem[reelListe[i]-1]
 
         
          print(reelListem)
 
          button5Tiklandi += 1
-         return "", "", list(y)[0], list(y)[1], list(y)[2], list(y)[3],list(y)[4], list(y)[5], list(y)[6], list(y)[7],list(y)[8], list(y)[9], list(y)[10], list(y)[11],list(y)[12], list(y)[13],
+         return "", "", " Değerler Atandı ", list(y)[0], list(y)[1], list(y)[2], list(y)[3],list(y)[4], list(y)[5], list(y)[6], list(y)[7],list(y)[8], list(y)[9], list(y)[10], list(y)[11],list(y)[12], list(y)[13],
    
 
-    return "","","","","","","","","","","","","","","",""
+    return "","","","","","","","","","","","","","","","",""
 
 
 

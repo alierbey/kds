@@ -45,11 +45,11 @@ pageAddingData = html.Div(
                                             for x in range(1980,2021)],
                                     clearable=False,style={'width': "80%","font_color":style.cardBackColor['back'],"padding-left":60},
                                 ),],),
-                                 html.Td([html.Div(dcc.Input(id='input-tuketim-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
-                                 html.Td([html.Div(dcc.Input(id='input-gsd-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
-                                 html.Td([html.Div(dcc.Input(id='input-gstl-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
-                                 html.Td([html.Div(dcc.Input(id='input-nufus-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
-                                 html.Td([html.Div(dcc.Input(id='input-sue-on-submit', value = 0, type='text', className="form-control", style={"color": "white"} )),]),
+                                 html.Td([html.Div(dcc.Input(id='input-tuketim-on-submit', value = 0, type='text', className="form-control", style={"color": "gray"} )),]),
+                                 html.Td([html.Div(dcc.Input(id='input-gsd-on-submit', value = 0, type='text', className="form-control", style={"color": "gray"} )),]),
+                                 html.Td([html.Div(dcc.Input(id='input-gstl-on-submit', value = 0, type='text', className="form-control", style={"color": "gray"} )),]),
+                                 html.Td([html.Div(dcc.Input(id='input-nufus-on-submit', value = 0, type='text', className="form-control", style={"color": "gray"} )),]),
+                                 html.Td([html.Div(dcc.Input(id='input-sue-on-submit', value = 0, type='text', className="form-control", style={"color": "gray"} )),]),
                             ]),      
                          ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
                         html.Div([
@@ -90,13 +90,13 @@ tiklama_res = 0
         dash.dependencies.State('input-sue-on-submit', 'value'),
 )
 def update_output(n_clicks1,n_clicks2, yearValue, tuketimValue, gsdValue, gstlValue, nufusValue, sueValue):
-    print('N clicks {}'.format(n_clicks1))
-    print('Secilen Yıl {}'.format(yearValue))
-    print('Elektrik tüketim verisi {}'.format(tuketimValue))
-    print('gsd  verisi {}'.format(gsdValue))
-    print('gstl  verisi {}'.format(gstlValue))
-    print('nufus  verisi {}'.format(nufusValue))
-    print('sue  verisi {}'.format(sueValue))
+    # print('N clicks {}'.format(n_clicks1))
+    # print('Secilen Yıl {}'.format(yearValue))
+    # print('Elektrik tüketim verisi {}'.format(tuketimValue))
+    # print('gsd  verisi {}'.format(gsdValue))
+    # print('gstl  verisi {}'.format(gstlValue))
+    # print('nufus  verisi {}'.format(nufusValue))
+    # print('sue  verisi {}'.format(sueValue))
 
 
     
