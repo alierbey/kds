@@ -64,7 +64,7 @@ sidebar = html.Div(
                 dbc.NavLink("Descriptive", href="/page-8", active="exact"),
                 dbc.NavLink("Predictive", href="/page-9", active="exact"),
                 dbc.NavLink("Prescriptive", href="/page-10", active="exact"),
-                dbc.NavLink("Integrative", href="/page-11", active="exact"),
+                dbc.NavLink("Scenario", href="/page-11", active="exact"),
            
             ],
             vertical=True,

@@ -34,7 +34,7 @@ pageEnergyMixData = html.Div(
                     html.P("Elektrik üretimi için kullanılan kaynaklarda 2020 yılı itibariyle dışa bağımlılık oranı %43,6’dır."),
                             html.Table([
                               html.Tr([
-                                html.Td([html.P("Lütfen planladığınız dışa bağımlılık oranını giriniz.",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"2px"})],),
+                                html.Td([html.P("Lütfen planladığınız dışa bağımlılık oranını giriniz.",style={"text-align": "left","vertical-align":"middle", "margin":"10px"})],),
                                 html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
                                 html.Td([html.Div(dcc.Input(id='input-senaryo1-on-submit', value = 0,type='text', className="form-control", style={"color": "white"} )),]),
                                 html.Td([html.Button('Hesapla', id='submit-btn1-val', n_clicks=0, className = "btn btn-warning")]),
@@ -44,14 +44,14 @@ pageEnergyMixData = html.Div(
                                  
                     ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
                     html.Div(id='my-outputum1'),
-                     html.Hr(),
+                    html.Hr(),
 
                      
                      html.P("SENARYO 2: Beklenen talebi karşılamak için hangi oranda yenilenebilir enerji kaynağı kullanılacağını belirleyerek yatırım yapılması gereken enerji karışımını belirleyebilirsiniz. "),
                      html.P("Elektrik üretimi için kullanılan kaynaklarda 2020 yılı itibariyle yenilenebilir oranı %40,51’dir."),
                             html.Table([
                               html.Tr([
-                                html.Td([html.P("Lütfen planladığınız yenilenebilir enerji oranını giriniz.   ",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"2px"})],),
+                                html.Td([html.P("Lütfen planladığınız yenilenebilir enerji oranını giriniz.   ",style={"text-align": "left","vertical-align":"middle", "margin":"10px"})],),
                                 html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
                                 html.Td([html.Div(dcc.Input(id='input-senaryo2-on-submit', value = 0,type='text', className="form-control", style={"color": "white"} )),]),
                                 html.Td([html.Button('Hesapla', id='submit-btn2-val', n_clicks=0, className = "btn btn-warning")]),
@@ -66,7 +66,7 @@ pageEnergyMixData = html.Div(
                      html.P(" Mevcut durumda enerji çeşitliliği için hesaplanan entropi değeri 0,7533‘dür."),
                             html.Table([
                               html.Tr([
-                                html.Td([html.P("Lütfen enerji çeşitliliğinin entropi değerini artırmak istediğiniz oranı giriniz. ",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"2px"})],),
+                                html.Td([html.P("Lütfen enerji çeşitliliğinin entropi değerini artırmak istediğiniz oranı giriniz. ",style={"text-align": "left","vertical-align":"middle", "margin":"10px"})],),
                                 html.Td([html.P("%",style={"text-align": "right","vertical-align":"right", "margin":"1rem","padding":"8px"})]),
                                 html.Td([html.Div(dcc.Input(id='input-senaryo3-on-submit', value = 0,type='text', className="form-control", style={"color": "white"} )),]),
                                 html.Td([html.Button('Hesapla', id='submit-btn3-val', n_clicks=0, className = "btn btn-warning")]),
@@ -76,7 +76,7 @@ pageEnergyMixData = html.Div(
                     ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
                      html.Div(id='my-outputum3'),
                   ],className="row justify-content-md-center"),   
-                 ],style = {'background-color' : style.cardBackColor['back'],'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)',"vertical-align":"middle"})            
+                 ],style = {'background-color' : style.cardBackColor['back'],'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)',"vertical-align":"middle","padding":"30px"})            
                 ],className="col-xl-12"),
               ],className="row"),
         html.Hr(),

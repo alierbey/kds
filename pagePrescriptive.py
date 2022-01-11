@@ -10,9 +10,17 @@ import plotly.io as pio
 
 import style
 
-import pageIntegrativeCard1
-import pageIntegrative2
-import pageIntegrativeCard2
+import prs_card1
+import prs_card2
+import prs_card3
+import prs_card4
+import prs_gauge3
+import prs_gauge4
+import prs_pie2
+import prs_bar4
+import prs_bar2
+import pred_tuketim
+
 import pageIntegrative4
 import pageIntegrativeCard3
 import pageIntegrative6
@@ -20,6 +28,8 @@ import pageIntegrative7
 import pageIntegrative8
 import pageIntegrative9
 import style
+import dataGlobals as dataGlobal
+
 
 
 pageScriptive = html.Div(
@@ -31,7 +41,7 @@ pageScriptive = html.Div(
                 html.Div([
             
                     html.Div([
-                        html.H5("Elektrik Tüketiminde Yıllık Değişim Hızı", style = {"padding-top":20, "text-align":"center"}),
+                        html.H6("Elektrik Tüketiminde Yıllık Değişim Hızı", style = {"padding":20, "text-align":"center"}),
                         gauge2.gauge2
                     ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
@@ -41,7 +51,8 @@ pageScriptive = html.Div(
                 html.Div([
                     html.Div([
                         
-                        html.H5("Elektrik Tüketim Tahmini", style = {"padding-top":20, "text-align":"center"}),
+                        
+                          pred_tuketim.fig
                             #dcc.Graph(figure=electric.fig)
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
@@ -55,8 +66,9 @@ pageScriptive = html.Div(
             
                     html.Div([
                         
-                          html.H5("Elektrik Üretiminde Planlanan Değişim", style = {"padding-top":20, "text-align":"center"}),
-                        dcc.Graph(figure=bl.fig)
+                        #yeap
+                        html.H6(" Kriter Ağırlıkları ", style = {"padding-top":20, "text-align":"center"}),
+                        dcc.Graph(figure=sb.fig)
                     ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
                 ],)            
@@ -70,33 +82,35 @@ pageScriptive = html.Div(
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
             ],className="col-xl-6",)
         ],className="row"),
-          html.Hr(),
-         html.Div([
-            html.Div([
-                html.Div([
+        #   html.Hr(),
+        #  html.Div([
+        #     html.Div([
+        #         html.Div([
             
-                    html.Div([
+        #             html.Div([
                        
-                         html.H5(" Kriter Ağırlıkları ", style = {"padding-top":20, "text-align":"center"}),
-                        dcc.Graph(figure=sb.fig)
-                    ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
-                ],)            
-            ],className="col-xl-4",),
-            html.Div([
-                html.Div([
-                    html.Div([
+        #                  html.H5(" Kriter Ağırlıkları ", style = {"padding-top":20, "text-align":"center"}),
+        #                 dcc.Graph(figure=sb.fig)
+        #             ],style = {'background-color' : style.cardBackColor['back'],
+        #     'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
+        #         ],)            
+        #     ],className="col-xl-4",),
+        #     html.Div([
+        #         html.Div([
+        #             html.Div([
                            
-                    ])
-                ])            
-            ],className="col-xl-8",)
-        ],className="row"),
-
+        #             ])
+        #         ])            
+        #     ],className="col-xl-8",)
+        # ],className="row"),
+    html.Hr(),
          html.Div([
             html.Div([
                 html.Div([
                     html.Div([
-                       dcc.Graph(figure=pageIntegrativeCard1.fig)
+                    #    dcc.Graph(figure=pageIntegrativeCard1.fig)
+                    prs_card1.fig
+                   
 
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
@@ -106,7 +120,9 @@ pageScriptive = html.Div(
                 html.Div([
                     html.Div([
                       
-                        dcc.Graph(figure=pageIntegrativeCard2.fig)
+                        # dcc.Graph(figure=pageIntegrativeCard2.fig)
+                        #  dcc.Graph(figure= prs_card2.fig)
+                         prs_card2.fig
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
@@ -114,7 +130,9 @@ pageScriptive = html.Div(
              html.Div([
                 html.Div([
                     html.Div([
-                             dcc.Graph(figure=pageIntegrativeCard3.fig)
+                            #  dcc.Graph(figure=pageIntegrativeCard3.fig)
+                            #   dcc.Graph(figure= prs_card3.fig)
+                              prs_card3.fig
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
@@ -125,8 +143,10 @@ pageScriptive = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
-                           html.H5("Verimlilik ", style = {"padding-top":20, "text-align":"center"}),
-                           dcc.Graph(figure=pageIntegrative2.fig)
+                           html.H6("Kurulu Güç Bazında Verimlilik ", style = {"padding-top":20, "text-align":"center"}),
+                           dcc.Graph(figure=prs_gauge3.fig)
+                        #    prs_gauge3.fig
+                       
                     ]),
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'}),          
@@ -134,7 +154,10 @@ pageScriptive = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
-                      dcc.Graph(figure=pageIntegrative4.fig) 
+                    #   dcc.Graph(figure=pageIntegrative4.fig)
+                   
+                     html.H6("Santral Türlerine Göre İstihdama Katkı", style = {"padding-top":20, "text-align":"center"}),
+                    prs_bar2.fig 
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
@@ -145,7 +168,8 @@ pageScriptive = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
-                           dcc.Graph(figure=pageIntegrative6.fig)
+                        #    dcc.Graph(figure=pageIntegrative6.fig)
+                        prs_bar4.fig
                     ]),
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'}),          
@@ -153,30 +177,29 @@ pageScriptive = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
-                      dcc.Graph(figure=pageIntegrative7.fig) 
+                    #   dcc.Graph(figure=pageIntegrative7.fig) 
+                    # dcc.Graph(figure=prs_gauge4.fig)
+                    # prs_gauge4.fig 
+                    
+
+                       html.H6("Elektrik Üretiminde Planlanan Değişim", style = {"padding":20, "text-align":"center"}),
+                       
+                        dcc.Graph(figure=bl.fig)
+
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
             ],className="col-xl-6",)
         ],className="row"),
-        html.Hr(),
+       
+          html.Hr(),
         html.Div([
             html.Div([
                 html.Div([
-                    html.Div([
-                    dcc.Graph(figure=pageIntegrative8.fig)
-                    ]),
-                ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'}),          
-            ],className="col-xl-6",),
-            html.Div([
-                html.Div([
-                    html.Div([
-                      dcc.Graph(figure=pageIntegrative9.fig) 
-                    ])
+                   prs_pie2.fig
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
-            ],className="col-xl-6",),
+            ],className="col-xl-12",),
             
         ],className="row"),
        

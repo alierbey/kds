@@ -22,7 +22,8 @@ df_tarih = df.groupby('Tarih')
 # App layout
 grafKisiBasi = html.Div([
 
-    html.H6("Kişibaşı Elektrik Tüketim Raporu", style={'text-align': 'center'}),
+    
+      html.H6("Kişibaşı Elektrik Tüketim Raporu", style = {"padding":20, "text-align":"center"}),
 
     dcc.Dropdown(id="slct_year",
                  options=[{"label": x, "value": x} 

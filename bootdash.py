@@ -12,19 +12,21 @@ from plotly.subplots import make_subplots
 from scipy import stats
 import scipy as sp
 import random
+import dataGlobals
 import pageHome
 import pageAvailableData
 import pageAddingData
 import pageDataUpload
 import pageDescriptive
-# import pagePredictive
+import pagePredictive
 import pageEnergyMixData
 import pageConsumptionForecast
 import pageDecision
 import pagePrescriptive
 import pageIntegrative
 import sidebar
-import dataGlobals
+
+
 
 # pio.templates.default = "plotly_dark"
 
@@ -77,8 +79,8 @@ def render_page_content(pathname):
             return pageDecision.pageDecision
     elif pathname == "/page-8":
             return pageDescriptive.pageDescriptive
-#     elif pathname == "/page-9":
-#             return pagePredictive.pagePredictive
+    elif pathname == "/page-9":
+             return pagePredictive.pagePredictive
     elif pathname == "/page-10":
             return pagePrescriptive.pageScriptive
     elif pathname == "/page-11":

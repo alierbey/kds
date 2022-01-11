@@ -1,22 +1,24 @@
 print("data Globals")
 
 import pandas as pd
+import numpy as np
 
 
 df = pd.read_excel("veri1.xlsx")
-df['Tarih']=df['Tarih'].dt.year
-df_tarih = df.groupby('Tarih')
+
+# df['Tarih']=df['Tarih'].dt.year
+# df_tarih = df.groupby('Tarih')
 
 
 df_manipule = df
 df_manipule_tarih = df.groupby('Tarih')
 
-def reset():
-    df = pd.read_excel("veri1.xlsx")
-    df['Tarih']=df['Tarih'].dt.year
-    df_tarih = df.groupby('Tarih')
+# def reset():
+#     # df = pd.read_excel("veri1.xlsx")
+#     # df['Tarih']=df['Tarih'].dt.year
+#     # df_tarih = df.groupby('Tarih')
 
-reset()
+# reset()
 
 def veriEdit(gelenDergerler):
     df['Tuketim'] = df['Tuketim'] * gelenDergerler[0]
@@ -56,4 +58,6 @@ def reset_manipule():
 
 
 # w_son global değişkeni decision sayfasındaki seçime bağlı olarak değişmektedir.
-w_son = 0
+w_son = np.array([0.1, 0.05, 0.15, 0.25, 0.05, 0.25, 0.1])
+
+seciliTarih = 2021

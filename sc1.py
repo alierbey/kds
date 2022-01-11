@@ -80,15 +80,15 @@ fig.update_layout(height=600, width=800,
     title_text="Santrallere Göre Elektrik Üretimi 2020-2040",
     # Add annotations in the center of the donut pies.
     annotations=[dict(text='2020 <br>Üretim', x=0.17, y=0.5, font_size=15, showarrow=False, 
-                      font=dict(size=14, color="#000000")),
+                      font=dict(size=14, color="#fff")),
                  dict(text='2040 <br>Üretim', x=0.83, y=0.5, font_size=15, showarrow=False, 
-                      font=dict(size=14, color="#000000"))])
+                      font=dict(size=14, color="#fff"))])
                 
 
 fig.update_layout({
     
 
-    "font_color":"black",
+    "font_color":"white",
     "plot_bgcolor": "rgba(0, 0, 0, 0)",
     "paper_bgcolor": "rgba(0, 0, 0, 0)",
 })
@@ -96,6 +96,7 @@ fig.update_layout(
     # height=800,
     title_text='Senaryo 1', title_x=0.5
 )
+
 
 
 # app = dash.Dash()

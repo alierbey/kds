@@ -6,6 +6,8 @@ from dash.dependencies import Input, Output
 # from bootdash import app
 from app import app
 import style
+import dataGlobals as dataGlobal
+
 
 txtContent1 = """
 Elektrik tahmini temelde bir 
@@ -35,8 +37,8 @@ pageConsumptionForecast = html.Div(
                              html.Tr([
                                 html.Td([html.P("Elektrik tüketim tahmini için yıl seçiniz",style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"})],),
                                 dcc.Dropdown(
-                                    id='slct_cat', 
-                                    value='Teknik', 
+                                    id='slct_cat_year1', 
+                                    value='2021', 
                                     options=[{'value': x, 'label': x} 
                                             for x in range(2021,2041)],
                                     clearable=False
@@ -69,8 +71,8 @@ pageConsumptionForecast = html.Div(
                             #     html.Td([]),
                             # ],style={"text-align": "left","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
                            
-                            
-                              
+                              html.Td([html.Div(dcc.Input(id='yeap_output1', value = 0, type='text', className="form-control", style={"color": "gray",'display': 'none'} )),]),
+                              #  html.Td([html.Div(dcc.Input(id='yeap_input1', value = 0, type='text', className="form-control", style={"color": "gray"} )),]),
                               
                          ],style={"text-align": "center","vertical-align":"middle", "margin":"1rem","padding":"8px"}),
 
@@ -87,13 +89,14 @@ pageConsumptionForecast = html.Div(
 
 
 @app.callback(
-    dash.dependencies.Output('app3-input-on-submit', 'value'),
-    [dash.dependencies.Input('app3-submit-val-plus', 'n_clicks')],
-    [dash.dependencies.Input('app3-submit-val-minus', 'n_clicks')],
-    [dash.dependencies.State('app3-input-on-submit', 'value')])
-def update_output(value,n_clicks,nclicks):
-    print(value, n_clicks)
-    if value==None:
-        value=0
-    value = value+1
-    return '{}'.format(value)
+    dash.dependencies.Output('yeap_output1', 'value'),
+    dash.dependencies.Input("slct_cat_year1", "value"),
+    #  dash.dependencies.State('yeap_input1', 'value'),
+    )
+def update_output(value1):
+    print(value1)
+    dataGlobal.seciliTarih = int(value1)
+    print(dataGlobal.seciliTarih)
+    # prs_card1.fig
+    return ""
+    

@@ -22,7 +22,7 @@ fig.add_trace(go.Indicator(
     mode = "number+gauge+delta", value = 129534, #Son değer
     delta = {'reference': 113117.820}, #Mevcut miktar
     domain = {'x': [0.25, 1], 'y': [0.91, 0.98]},
-    title = {'text': "Komur"},
+    title = {'text': "Komur","font_size":14,},
     gauge = {
         'shape': "bullet",
         'axis': {'range': [None, 200000]}, #toplam uzunluk
@@ -35,7 +35,7 @@ fig.add_trace(go.Indicator(
     mode = "number+gauge+delta", value = 70473.3, #Son değer
     delta = {'reference': 56702.690}, #Mevcut miktar
     domain = {'x': [0.25, 1], 'y': [0.77, 0.84]},
-    title = {'text': "Doğalgaz"},
+    title = {'text': "Doğalgaz","font_size":14,},
     gauge = {
         'shape': "bullet",
         'axis': {'range': [None, 200000]}, #toplam uzunluk
@@ -48,7 +48,7 @@ fig.add_trace(go.Indicator(
     mode = "number+gauge+delta", value = 101838, #Son değer
     delta = {'reference': 88886.240}, #Mevcut miktar
     domain = {'x': [0.25, 1], 'y': [0.36, 0.43]},
-    title = {'text': "Hidroelektrik"},
+    title = {'text': "Hidroelektrik","font_size":14,},
     gauge = {
         'shape': "bullet",
         'axis': {'range': [None, 200000]}, #toplam uzunluk
@@ -61,7 +61,7 @@ fig.add_trace(go.Indicator(
     mode = "number+gauge+delta", value = 45794.4, #Son değer
     delta = {'reference': 29672.900}, #Mevcut miktar
     domain = {'x': [0.25, 1], 'y': [0.50, 0.57]},
-    title = {'text': "Rüzgar"},
+    title = {'text': "Rüzgar","font_size":14,},
     gauge = {
         'shape': "bullet",
         'axis': {'range': [None, 200000]}, #toplam uzunluk
@@ -74,7 +74,7 @@ fig.add_trace(go.Indicator(
     mode = "number+gauge+delta", value = 12171.9, #Son değer
     delta = {'reference': 240.900}, #Mevcut miktar
     domain = {'x': [0.25, 1], 'y': [0.64, 0.71]},
-    title = {'text': "Günes"},
+    title = {'text': "Günes","font_size":14,},
     gauge = {
         'shape': "bullet",
         'axis': {'range': [None, 200000]}, #toplam uzunluk
@@ -87,7 +87,7 @@ fig.add_trace(go.Indicator(
     mode = "number+gauge+delta", value = 28039.7,
     delta = {'reference': 11363.200},
     domain = {'x': [0.25, 1], 'y': [0.22, 0.29]},
-    title = {'text': "Jeotermal"},
+    title = {'text': "Jeotermal","font_size":14,},
     gauge = {
         'shape': "bullet",
         'axis': {'range': [None, 200000]},
@@ -100,7 +100,7 @@ fig.add_trace(go.Indicator(
     mode = "number+gauge+delta", value = 28036.2,
     delta = {'reference': 5257.630},
     domain = {'x': [0.25, 1], 'y': [0.08, 0.15]},
-    title = {'text' :"Atık vb."},
+    title = {'text' :"Atık vb.","font_size":14,},
     gauge = {
         'shape': "bullet",
         'axis': {'range': [None, 200000]},

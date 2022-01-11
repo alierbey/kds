@@ -5,8 +5,9 @@ import dash_core_components as dcc
 
 import plotly.io as pio
 import sc3
-# import sc2
+import sc2
 import sc1
+from app import app
 
 
 
@@ -31,6 +32,8 @@ pageIntegrative = html.Div(
                 html.Div([
                     html.Div([
                     #   dcc.Graph(figure=sc2.fig)
+                    sc2.fig
+
                         
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
