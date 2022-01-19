@@ -19,6 +19,7 @@ def normalize(data):
 
 
 def secim1Uygula():
+    dataGlobals.w_ham = w
     data1 = np.divide(1,data.iloc[:,0:8])
     data.iloc[:,0:8] = data1.iloc[:,0:8]
     A = normalize(data)
@@ -27,6 +28,7 @@ def secim1Uygula():
     print(dataGlobals.w_son)
 
 def secim2Uygula():
+    
     data1 = np.divide(1,data.iloc[:,0:8])
     data.iloc[:,0:8] = data1.iloc[:,0:8]
     A = normalize(data)
@@ -39,12 +41,14 @@ def secim2Uygula():
 
     A_df = 1 - entropi
     w = A_df / sum(A_df) 
+    dataGlobals.w_ham = w
     AA = A*w
     dataGlobals.w_son = AA.sum(axis=1)
     print(dataGlobals.w_son)
 
 
 def secim3Uygula(w):
+    dataGlobals.w_ham = w
     data1 = np.divide(1,data.iloc[:,0:8])
     data.iloc[:,0:8] = data1.iloc[:,0:8]
     A = normalize(data)
@@ -54,6 +58,7 @@ def secim3Uygula(w):
 
 
 def secim4Uygula(sj, re):
+    
     data1 = np.divide(1,data.iloc[:,0:8])
     data.iloc[:,0:8] = data1.iloc[:,0:8]
     print("secim4 uygulandı")
@@ -69,6 +74,7 @@ def secim4Uygula(sj, re):
 
     qj = np.array(qj)
     w = qj/qj.sum()
+    dataGlobals.w_ham = w
     print("w", w)
     print("re", re)
     son_agirlik = [i for i in range(14)]

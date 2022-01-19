@@ -93,7 +93,7 @@ def display(value):
     fig.update_layout(barmode='group')
     
     fig.update_layout({
-        "height": 300,
+        "height": 400,
         "font_color":"white",
         "title_font_family":"Times New Roman",
         "title_font_color":"red",

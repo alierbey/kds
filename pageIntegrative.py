@@ -21,8 +21,9 @@ pageIntegrative = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
+                        sc1.fig
                      
-                        dcc.Graph(figure=sc1.fig)
+                        # dcc.Graph(figure=sc1.fig)
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
@@ -43,7 +44,8 @@ pageIntegrative = html.Div(
              html.Div([
                 html.Div([
                     html.Div([
-                               dcc.Graph(figure=sc3.fig)
+                            #    dcc.Graph(figure=sc3.fig)
+                               sc3.fig
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            

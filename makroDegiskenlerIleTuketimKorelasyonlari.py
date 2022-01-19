@@ -22,8 +22,8 @@ makroDegiskenlerIleTuketimKorelasyonlari = html.Div([
                                dcc.Dropdown(
                                     id="ticker",
                                     options=[{"label": x, "value": x} 
-                                            for x in dataGlobals.df.columns[3:]],
-                                    value=dataGlobals.df.columns[3],
+                                            for x in dataGlobals.df.columns[2:]],
+                                    value=dataGlobals.df.columns[2],
                                     clearable=False,
                                 ),
                                 dcc.Graph(id="time-series-chart"),

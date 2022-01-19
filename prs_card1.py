@@ -53,12 +53,12 @@ fig = html.Div([
     [Input("slct_year_yeni", "value")]
 )
 def display(value):
-    print("****Girdim2****")
+    
     fig = go.Figure(go.Indicator(
     mode = "number+delta",
     value = hesap(),
     title = {"text": "2020 : 259511 GWh</br> </br>" +str(dataGlobal.seciliTarih)+ " : " +str(hesap())+ " GWh"},
-    delta = {'reference': 259511, 'relative': True},
+    delta = {'reference': 259511, 'relative': True, 'valueformat':',.3%' },
     domain = {'x': [0, 1], 'y': [0, 1]})) 
     fig.update_layout({
         "height": 300,

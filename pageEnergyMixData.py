@@ -6,6 +6,7 @@ from dash.dependencies import Input, Output
 # from bootdash import app
 from app import app
 import style
+import dataGlobals
 
 txtContent = """
 Bu sayfada Hedef Arama analizleri doğrultusunda dışa bağımlılık, yenilenebilir enerji kullanımı ve enerji çeşitliliğiyle ilgili senaryolar oluşturulmuştur. 
@@ -99,11 +100,15 @@ button3Tiklandi = 0
     dash.dependencies.State('input-senaryo3-on-submit', 'value'),
     )
 def update_output(n_clicks1,n_clicks2,n_clicks3, value1, value2, value3):
-    # print(n_clicks1,n_clicks2,n_clicks3,value1,value2,value3)
+    print(n_clicks1,n_clicks2,n_clicks3,value1,value2,value3)
 
     global button1Tiklandi
     global button2Tiklandi
     global button3Tiklandi
+
+
+
+
 
     if n_clicks1 == 0 and n_clicks2 == 0 and n_clicks3 ==  0:
         button1Tiklandi = 0 
@@ -111,16 +116,19 @@ def update_output(n_clicks1,n_clicks2,n_clicks3, value1, value2, value3):
         button3Tiklandi = 0 
 
     if n_clicks1 > button1Tiklandi:
+        dataGlobals.goalSeekingVeri1 = int(value1) / 100
         print("Button1 Tıklandı")
         button1Tiklandi += 1
         return "Değer işleme alındı","",""
 
     if n_clicks2 > button2Tiklandi:
+        dataGlobals.goalSeekingVeri2 = int(value2) / 100
         print("Button2 Tıklandı")
         button2Tiklandi += 1
         return "","Değer işleme alındı",""
 
     if n_clicks3 > button3Tiklandi:
+        dataGlobals.goalSeekingVeri3 = int(value3) / 100
         print("Button3 Tıklandı")
         button3Tiklandi += 1
         return "","","Değer işleme alındı"

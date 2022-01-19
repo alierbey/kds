@@ -101,7 +101,7 @@ def display(value):
     fig = go.Figure(data=[go.Bar(name='Mevcut', x=yesyeni_labels, y=mevcut_kg, marker_color='rgb(55, 83, 109)'), go.Bar(name='İhtiyaç', x=yesyeni_labels, y=ihtiyac_kg, marker_color='rgb(26, 118, 255)')])
     fig.update_layout({
         
-        "height": 300,
+        "height": 400,
         "font_color":"white",
         "title_font_family":"Times New Roman",
         "title_font_color":"red",

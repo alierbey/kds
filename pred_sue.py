@@ -68,7 +68,7 @@ def hesap():
     # Datayı Yükleyelim
     df = pd.read_excel('veri1.xlsx', 'Sheet1', date_parser=[0])
     dft = pd.read_excel('veri1.xlsx', 'Sheet2', date_parser=[0])
-    print(df.info())
+    # print(df.info())
 
     t = [i for i in range(1980, 2021)]
     Tarih = np.array(t)

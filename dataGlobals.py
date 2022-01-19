@@ -59,5 +59,18 @@ def reset_manipule():
 
 # w_son global değişkeni decision sayfasındaki seçime bağlı olarak değişmektedir.
 w_son = np.array([0.1, 0.05, 0.15, 0.25, 0.05, 0.25, 0.1])
+wi = 1/14
+w_ham = np.array([wi, wi, wi, wi, wi, wi, wi, wi, wi, wi, wi, wi, wi, wi])
 
 seciliTarih = 2021
+
+goalSeekingVeri1 = 0.436
+goalSeekingVeri2 = 0.4
+goalSeekingVeri3 = 0.75
+
+
+tuketim_d = 0
+gsd_d = 0
+gstl_d = 0
+nufus_d = 0
+sue_d = 0

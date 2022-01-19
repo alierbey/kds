@@ -95,7 +95,7 @@ def display(value):
     value = mist+gist,
     title = {"text": "2020 : " +str(mist)+ " </br> </br> " +str(dataGlobals.seciliTarih)+ " : " +str(gist)+ ""},
     
-    delta = {'reference': mist, 'relative': True},
+    delta = {'reference': mist, 'relative': True, 'valueformat':',.3%'},
     domain = {'x': [0, 1], 'y': [0, 1]}))
     fig.update_layout({
         "height": 300,

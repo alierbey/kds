@@ -88,7 +88,7 @@ def display(value):
     value = son_skg,
     title = {"text": "2020 : 95579 MWh </br> </br> " +str(dataGlobals.seciliTarih)+ " : " +str(skg)+ " MWh (Ek) "},
     
-    delta = {'reference': 95579, 'relative': True},
+    delta = {'reference': 95579, 'relative': True, 'valueformat':',.3%'},
     domain = {'x': [0, 1], 'y': [0, 1]}))
     fig.update_layout({
         "height": 300,

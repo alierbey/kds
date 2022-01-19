@@ -13,13 +13,13 @@ pio.templates.default = "seaborn"
 import style
 import dataGlobals
 
+df = pd.read_excel('veri1.xlsx', 'Sheet2', date_parser=[0])
+df_tarih = df.groupby('Tarih').sum()
 
-df_tarih = dataGlobals.df.groupby('Tarih').sum()
 
 dff = df_tarih
 dff.drop(columns=['SUE','Nufus', 'GSD', 'GSTL' ], inplace=True)
-# df.reset_index(inplace=True)
-# print(df[:5])
+
 
 a = []
 for i in range(len(dff)-1):
@@ -34,26 +34,28 @@ b = a.loc["Oran"]
 
 
 
+
+
 # ------------------------------------------------------------------------------
 # App layout
 #app.layout = html.Div([
 gauge2 = html.Div([
-    
-    dcc.Dropdown(id="slct_year_gauge2",
+    dcc.Dropdown(id="slct_year_gauge22",
                  options=[{"label": x, "value": x} 
-                          for x, row in df_tarih.iterrows()],
+                           for x in range(2020,2041)],
                  clearable=False,
                  multi=False,
-                 value=1987,
+                 value=2020,
                  style={'width': "40%","font_color":style.cardBackColor['back'],"padding-left":60},
     ),
-    dcc.Graph(id="map"),
-    
+    dcc.Graph(id="map22"),
+    html.H6("1980 - 2020 yılları arasında", style = {"padding-top":0, "text-align":"center", "color":"gray"}),
+    html.H6(" ortalama yıllık değişimi = %6.63", style = {"padding-top":0, "text-align":"center", "color":"gray"}),
 ])
 
 @app.callback(
-     Output("map", "figure"), 
-    [Input("slct_year_gauge2", "value")])
+     Output("map22", "figure"), 
+    [Input("slct_year_gauge22", "value")])
 def display(value):
     fig = go.Figure(go.Indicator(
     mode = "gauge+number",

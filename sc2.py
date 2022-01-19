@@ -47,14 +47,17 @@ beklenen_uretim = 0
 def hesap():
     global mevcut
     global beklenen_uretim
-    ist_yo = 0.6 #istenen ynilenebilir oranı
+    # ist_yo = 0.6 #istenen ynilenebilir oranı
+    ist_yo = dataGlobals.goalSeekingVeri2 #istenen ynilenebilir oranı
     ihtiyac = 301907 #2040 yılına kadar ihtiyac duyulacak üretim
 
     #mevcut üretim (Kömür, Doğalgaz, Hidro, Güneş, Rüzgar, Jeotermal, Biyokütle)
     mevcut = np.array([104154.283, 69307.467, 78084.435, 24591.438, 420.223, 9884.549, 5132.992])
     #baslangic_w değerleri analitik sayfasından hesaplanan ağırlıklar gelecek. 
-    baslangic_w = np.array([0.0142857143, 0.092857143,	
-                            0.142857143, 0.142857143, 0.142857143, 0.142857143, 0.142857143])
+
+    baslangic_w = dataGlobals.w_son
+    # baslangic_w = np.array([0.0142857143, 0.092857143,	
+    #                         0.142857143, 0.142857143, 0.142857143, 0.142857143, 0.142857143])
 
     top_uretim = ihtiyac + sum(mevcut) #2040 yılında beklenen toplam üretim
     ist_yenilenebilir = top_uretim * ist_yo #yenilenebilire bağlı toplam istenen üretim

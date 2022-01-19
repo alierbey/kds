@@ -49,6 +49,8 @@ tuketimt_prex = 0
 
 def hesap():
 
+
+
     global date_train
     global tuketim_trainx
     global date_test 
@@ -154,8 +156,10 @@ def hesap():
 
 
 fig = html.Div([
+
+    dcc.Graph(id='pred_tuketim2'), 
     
-    dcc.Dropdown(id="slct_year_yeni5",
+    dcc.Dropdown(id="slct_year_yeni92",
                  options=[{"label": x, "value": x} 
                           for x in range(2021,2040)],
                  clearable=False,
@@ -173,15 +177,15 @@ fig = html.Div([
     ),
     
 
-    dcc.Graph(id='pred_tuketim1'), 
+    
        
 ])
 
 
 
 @app.callback(
-    Output('pred_tuketim1', 'figure'),
-    [Input("slct_year_yeni5", "value")]
+    Output('pred_tuketim2', 'figure'),
+    [Input("slct_year_yeni92", "value")]
 )
 def display1(value):
     hesap()
@@ -211,7 +215,6 @@ def display1(value):
 )
 
     layout = go.Layout(
-    title = "Elektrik Talep Tahmini",
     xaxis = {'title' : "Tarih"},
     yaxis = {'title' : "Talep"}
     )

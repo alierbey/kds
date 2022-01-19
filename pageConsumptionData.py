@@ -8,6 +8,7 @@ from app import app
 import style
 import dataGlobals
 import numpy as np
+import dataGlobals
 
 txtContent = """
 Elektrik tüketim tahmini ve bu tahmin doğrultusunda santral dağılımının yeniden belirlenmesi sürecinde çok sayıda veri kullanılmaktadır. Elde edilen sonucun duyarlılığının belirlenebilmesi için kullanılan tüm verilerde yüzdesel değişiklikler yapılması gerekebilmektedir. 
@@ -166,23 +167,56 @@ nufusDegisim = 0
     )
     
 def update_output(n_clicks, tuketimValue, tuketimDurum, gsdValue, gsdDurum, gstlValue, gstlDurum, nufusValue, nufusDurum, sueValue, sueDurum):
-    # print('Elektrik tüketim verisi %{} {}'.format(tuketimValue,tuketimDurum))
-    # print('gsd  verisi %{} {}'.format(gsdValue,gsdDurum))
-    # print('gstl  verisi %{} {}'.format(gstlValue,gstlDurum))
-    # print('nufus  verisi %{} {}'.format(nufusValue,nufusDurum))
-    # print('sue  verisi %{} {}'.format(sueValue,sueDurum))
+    print('Elektrik tüketim verisi %{} {}'.format(tuketimValue,tuketimDurum))
+    print('gsd  verisi %{} {}'.format(gsdValue,gsdDurum))
+    print('gstl  verisi %{} {}'.format(gstlValue,gstlDurum))
+    print('nufus  verisi %{} {}'.format(nufusValue,nufusDurum))
+    print('sue  verisi %{} {}'.format(sueValue,sueDurum))
 
     yuzdeler = [float(tuketimValue), float(gsdValue), float(gstlValue), float(nufusValue), float(sueValue)]
     durum = [tuketimDurum, gsdDurum, gstlDurum, nufusDurum, sueDurum]
 
-    yuzdeler = np.array(yuzdeler)
-    durum = np.array(durum)
+    tuketimValue = int(tuketimValue)
+    gsdValue = int(gsdValue)
+    gstlValue = int(gstlValue)
+    nufusValue = int(nufusValue)
+    sueValue = int(sueValue)
 
-    print(yuzdeler * durum)
+    if tuketimDurum == 0:
+      tuketimValue = tuketimValue * (-1)
 
-    hesap = (yuzdeler * durum + 100) / 100
+    if gsdDurum == 0:
+      gsdValue = gsdValue * (-1)
 
-    dataGlobals.veriEdit(hesap)
+    if gstlDurum == 0:
+      gstlValue = gstlValue * (-1)
+
+    if nufusDurum == 0:
+      nufusValue = nufusValue * (-1)
+
+    if sueDurum == 0:
+      sueValue = sueValue * (-1)
+
+    dataGlobals.tuketim_d = tuketimValue
+    dataGlobals.gsd_d = gsdValue
+    dataGlobals.gstl_d = gstlValue
+    dataGlobals.nufus_d = nufusValue
+    dataGlobals.sue_d = sueValue
+
+    print('Elektrik tüketim verisi %{} {}'.format(tuketimValue,tuketimDurum))
+    print('gsd  verisi %{} {}'.format(gsdValue,gsdDurum))
+    print('gstl  verisi %{} {}'.format(gstlValue,gstlDurum))
+    print('nufus  verisi %{} {}'.format(nufusValue,nufusDurum))
+    print('sue  verisi %{} {}'.format(sueValue,sueDurum))
+
+    # yuzdeler = np.array(yuzdeler)
+    # durum = np.array(durum)
+
+    # print(yuzdeler * durum)
+
+    # hesap = (yuzdeler * durum + 100) / 100
+
+    # dataGlobals.veriEdit(hesap)
 
     return ""
 

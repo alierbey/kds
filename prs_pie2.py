@@ -96,7 +96,7 @@ fig = html.Div([
                  style={'display':'none','width': "40%","padding-left":60},
     ),
     
-     html.H6("Kişibaşı Elektrik Tüketim Raporu", style = {"padding":20, "text-align":"center"}),
+    #  html.H6("Kişibaşı Elektrik Tüketim Raporu", style = {"padding":20, "text-align":"center"}),
    
             html.Div([
                 html.Div([
@@ -127,7 +127,7 @@ def display1(value):
     # fig = go.Figure(go.Pie(labels=yeni_labels, values=tum, name= "" +str(dataGlobals.seciliTarih)+ " Üretim"), 1, 2)
     # fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
     fig.update_traces(hole=.4, hoverinfo="label+percent+name")
-    fig.update_layout(title_text="Enerji Kaynaklarına Göre Elektrik Üretimi 2020 - " +str(dataGlobals.seciliTarih)+ "", annotations=[ dict(text='' +str(2020)+ '', x=0.5, y=0.5, font_size=12, showarrow=False)])
+    fig.update_layout(title_text="Enerji Kaynaklarına Göre Elektrik Üretimi 2020" )
     fig.update_layout({
     "font_color":"white",
     "plot_bgcolor": "rgba(0, 0, 0, 0)",
@@ -145,7 +145,7 @@ def display1(value):
     # fig = go.Figure(go.Pie(labels=yeni_labels, values=tum, name= "" +str(dataGlobals.seciliTarih)+ " Üretim"), 1, 2)
     # fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
     fig.update_traces(hole=.4, hoverinfo="label+percent+name")
-    fig.update_layout(title_text="Enerji Kaynaklarına Göre Elektrik Üretimi 2020 - " +str(dataGlobals.seciliTarih)+ "", annotations=[ dict(text='' +str(dataGlobals.seciliTarih)+ '', x=0.5, y=0.5, font_size=12, showarrow=False)])
+    fig.update_layout(title_text="Enerji Kaynaklarına Göre Elektrik Üretimi " +str(dataGlobals.seciliTarih)+ "", annotations=[ dict(text='' +str(dataGlobals.seciliTarih)+ '', x=0.5, y=0.5, font_size=12, showarrow=False)])
     fig.update_layout({
     "font_color":"white",
     "plot_bgcolor": "rgba(0, 0, 0, 0)",

@@ -48,7 +48,7 @@ fig.add_trace(go.Indicator(
     mode = "number+gauge+delta", value = 101838, #Son değer
     delta = {'reference': 88886.240}, #Mevcut miktar
     domain = {'x': [0.25, 1], 'y': [0.36, 0.43]},
-    title = {'text': "Hidroelektrik","font_size":14,},
+    title = {'text': "Hidro","font_size":14,},
     gauge = {
         'shape': "bullet",
         'axis': {'range': [None, 200000]}, #toplam uzunluk
@@ -100,7 +100,7 @@ fig.add_trace(go.Indicator(
     mode = "number+gauge+delta", value = 28036.2,
     delta = {'reference': 5257.630},
     domain = {'x': [0.25, 1], 'y': [0.08, 0.15]},
-    title = {'text' :"Atık vb.","font_size":14,},
+    title = {'text' :"Biyokütle","font_size":14,},
     gauge = {
         'shape': "bullet",
         'axis': {'range': [None, 200000]},
