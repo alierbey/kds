@@ -31,6 +31,7 @@ a = pd.DataFrame(a, columns=['Oran'] )
 a.index = df_tarih.index
 a = a.T
 b = a.loc["Oran"]
+print(b)
 
 
 
@@ -44,10 +45,21 @@ gauge2 = html.Div([
                           for x, row in df_tarih.iterrows()],
                  clearable=False,
                  multi=False,
-                 value=1987,
+                 value=1980,
                  style={'width': "40%","font_color":style.cardBackColor['back'],"padding-left":60},
     ),
     dcc.Graph(id="map"),
+
+   
+
+
+
+    html.P("Belirtilen yıllar arasında,;",style = {'padding-left':"1rem",'padding-bottom':"1rem", "color":"gray"}),
+                         html.Ul([
+                             html.Li("En yüksek yıllık değişim 1987 yılında % 13.93, ",style = {'padding-left':"1rem",'padding-bottom':"1rem", "color":"gray"}),
+                             html.Li("En düşük yıllık değişim 2009 yılında - % 3.12",style = {'padding-left':"1rem",'padding-bottom':"1rem", "color":"gray"}),
+                         ]),
+                         html.P("olarak gerçekleşmiştir. ",style = {'padding-left':"1rem",'padding-bottom':"1rem","color":"gray"}),
     
 ])
 

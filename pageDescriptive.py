@@ -18,7 +18,7 @@ import descUretim1
 
 pageDescriptive = html.Div(
     [
-            html.H3("Descriptive"),
+            html.H3("Tanımlayıcı"),
                 html.Div([
                     html.Div([
                          html.Div([
@@ -50,7 +50,7 @@ html.Br([]),
                 html.Div([
                     html.Div([
                                 html.Div([
-                                    html.H6("Elektrik Tüketiminde Yıllık Değişim Hızı", style = {"padding-top":20, "text-align":"center"}),
+                                    html.H6("Elektrik Tüketiminde Yıllık Değişim (%)", style = {"padding-top":20, "text-align":"center"}),
                                     gauge2.gauge2
                                 ],style = {"margin":"0rem"})
                     ],style = {'background-color' : style.cardBackColor['back'],

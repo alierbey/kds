@@ -127,7 +127,7 @@ def display1(value):
     # fig = go.Figure(go.Pie(labels=yeni_labels, values=tum, name= "" +str(dataGlobals.seciliTarih)+ " Üretim"), 1, 2)
     # fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
     fig.update_traces(hole=.4, hoverinfo="label+percent+name")
-    fig.update_layout(title_text="Enerji Kaynaklarına Göre Elektrik Üretimi 2020" )
+    fig.update_layout(title_text="Enerji Kaynaklarına Göre Elektrik Üretimi 2020", annotations=[ dict(text='2020', x=0.5, y=0.5, font_size=12, showarrow=False)])
     fig.update_layout({
     "font_color":"white",
     "plot_bgcolor": "rgba(0, 0, 0, 0)",

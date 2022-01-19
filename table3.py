@@ -21,8 +21,7 @@ w = np.array([0.193066, 0.175514, 0.152621, 0.127184, 0.101747, 0.0782672, 0.057
 x = 0
 
 
-fm = np.array(['Fayda', 'Fayda','Fayda','Maliyet','Maliyet','Maliyet','Maliyet','Maliyet',
-               'Maliyet','Maliyet','Maliyet','Maliyet','Fayda'])
+fm = np.array(['F', 'F','F','M','M','M','M','M','M','M','M','M','F','M'])
 
 X1 = pd.DataFrame(kriter)
 X2 = pd.DataFrame(fm)
@@ -36,8 +35,7 @@ x.columns =['Kriterler', 'Etki', 'Ağırlık']
 
 def hesap():
     w = dataGlobals.w_ham
-    fm = np.array(['Fayda', 'Fayda','Fayda','Maliyet','Maliyet','Maliyet','Maliyet','Maliyet',
-               'Maliyet','Maliyet','Maliyet','Maliyet','Fayda'])
+    fm = np.array(['M', 'M','M','M','M','M','M','M','F','F','F','F','F','F'])
     X1 = pd.DataFrame(kriter)
     X2 = pd.DataFrame(fm)
     X3 = pd.DataFrame(w)

@@ -24,7 +24,7 @@ import numpy as np
 
 pageDecision = html.Div(
     [
-        html.H3("Decision"),
+        html.H3("Karar Parametreleri"),
               html.Div([
                 html.Div([
                     html.Div([
@@ -39,7 +39,7 @@ pageDecision = html.Div(
                     html.Div([
                        html.P('Tüm kriterleri eşit aralıkta kabul ederek devam etmek istiyorum', style = {"font-size": "18px", "padding": "20px", "color": "white","height":"80px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
                         html.Div([
- html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', style = {"font-size": "16px", "padding": "20px", "color": "white"}),
+ html.P('Eğer bu ağırlıklandırma yöntemini tercih ederseniz karar problemi için kullanılan kriterlerin tamamı eşit ağırlıkta kabul edilecektir. ', style = {"font-size": "16px", "padding": "20px", "color": "white"}),
                            html.Center([
                               
 html.Button('Uygula', id='submit-btn1-val', n_clicks=0 , className = "btn btn-info", style = {"margin":"20px","font-size": "18px", "color": "white", "vertical-align":"middle"})
@@ -51,7 +51,7 @@ html.Button('Uygula', id='submit-btn1-val', n_clicks=0 , className = "btn btn-in
                     html.Div([
                         html.P('Tüm kriter ağırlıklarını ENTROPİ yöntemi ile belirlemek istiyorum.', style = {"font-size": "18px", "padding": "20px", "color": "white","height":"80px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
                         html.Div([
-                           html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', style = {"font-size": "16px", "padding": "20px", "color": "white"}),
+                           html.P('Eğer bu ağırlıklandırma yöntemini tercih ederseniz karar problemi için kullanılan kriterler belirsizlik düzeylerine göre entropi hesaplaması yapılarak, yüksek belirsizlik yüksek ağırlık, düşük belirsizlik düşük ağırlık yaklaşımıyla hesaplanacaktır.', style = {"font-size": "16px", "padding": "20px", "color": "white"}),
                          html.Center([   html.Button('Uygula', id='submit-btn2-val', n_clicks=0, className = "btn btn-info", style = {"margin":"20px","font-size": "18px", "color": "white", "vertical-align":"middle"})
                          ]),
                     ],style = {'background-color' : style.cardBackColor['back'],'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)',"vertical-align":"middle"})            
@@ -66,50 +66,16 @@ html.Button('Uygula', id='submit-btn1-val', n_clicks=0 , className = "btn btn-in
 
 
 html.P('Tüm kriter ağırlıklarını kendim girmek istiyorum.', style = {"font-size": "18px", "padding": "20px", "color": "white","height":"80px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
+                         
+                         html.P('Eğer bu ağırlıklandırma yöntemini tercih ederseniz karar problemi için kullanılan kriter ağırlıklarının tamamının sizin tarafınızdan girilmesi gerekmektedir. Toplam kriter ağırlıklarının 1 olmak zorunda olduğunu lütfen unutmayınız. ', style = {"font-size": "16px", "padding": "20px", "color": "white"}),
                            html.Table([
                                html.Tr(
                                     [
                                    html.Td(html.P("Kriterler")),
                                     html.Td(html.P("W")),
                                     ]),
-                                    html.Tr(
-                                    [
-                                   html.Td(html.P("Üretim")),
-                                    html.Td([html.Div(dcc.Input(id='input-uretim-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
-                                    ]),
-                                html.Tr([
-                                   html.Td(html.P("Kurulu Güç")),
-                                   html.Td([html.Div(dcc.Input(id='input-kuruluGuc-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
-                                ]),
-                                html.Tr([
-                                   html.Td(html.P("İşletme Ömrü")),
-                                   html.Td([html.Div(dcc.Input(id='input-isletmeOmru-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
-                                ]),
-                                html.Tr([
-                                   html.Td(html.P("Verimlilik")),
-                                   html.Td([html.Div(dcc.Input(id='input-verimlilik-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
-                                ]),
-                                html.Tr([
-                                   html.Td(html.P("Kapasite Faktörü")),
-                                   html.Td([html.Div(dcc.Input(id='input-kapasiteFaktoru-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
-                                ]),
-                                html.Tr([
-                                   html.Td(html.P("Yatırım Maliyeti")),
-                                   html.Td([html.Div(dcc.Input(id='input-yatirimMaliyeti-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
-                                ]),
-                                html.Tr([
-                                   html.Td(html.P("İşletme Maliyeti")),
-                                   html.Td([html.Div(dcc.Input(id='input-isletmeMaliyeti-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
-                                ]),
-                                html.Tr([
-                                   html.Td(html.P("İstihdam")),
-                                   html.Td([html.Div(dcc.Input(id='input-istihdam-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
-                                ]),
-                                html.Tr([
-                                   html.Td(html.P("Geri Ödeme Süresi")),
-                                   html.Td([html.Div(dcc.Input(id='input-geriOdemeSuresi-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
-                                ]),
-                                html.Tr([
+
+                                    html.Tr([
                                    html.Td(
                                        html.Div(
                                       children=[
@@ -149,10 +115,56 @@ html.P('Tüm kriter ağırlıklarını kendim girmek istiyorum.', style = {"font
                                    ),
                                    html.Td([html.Div(dcc.Input(id='input-SO2-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
-                                html.Tr([
+ html.Tr([
                                    html.Td(html.P("Arazi Kullanımı")),
                                    html.Td([html.Div(dcc.Input(id='input-araziKullanimi-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
                                 ]),
+
+                                 html.Tr([
+                                   html.Td(html.P("Yatırım Maliyeti")),
+                                   html.Td([html.Div(dcc.Input(id='input-yatirimMaliyeti-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
+                                ]),
+                                 html.Tr([
+                                   html.Td(html.P("İşletme Maliyeti")),
+                                   html.Td([html.Div(dcc.Input(id='input-isletmeMaliyeti-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
+                                ]),
+                                 html.Tr([
+                                   html.Td(html.P("Geri Ödeme Süresi")),
+                                   html.Td([html.Div(dcc.Input(id='input-geriOdemeSuresi-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
+                                ]),
+                                   html.Tr([
+                                   html.Td(html.P("İstihdam")),
+                                   html.Td([html.Div(dcc.Input(id='input-istihdam-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
+                                ]),
+
+
+                                    html.Tr(
+                                    [
+                                   html.Td(html.P("Üretim")),
+                                    html.Td([html.Div(dcc.Input(id='input-uretim-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
+                                    ]),
+                                html.Tr([
+                                   html.Td(html.P("Kurulu Güç")),
+                                   html.Td([html.Div(dcc.Input(id='input-kuruluGuc-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
+                                ]),
+                                html.Tr([
+                                   html.Td(html.P("İşletme Ömrü")),
+                                   html.Td([html.Div(dcc.Input(id='input-isletmeOmru-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
+                                ]),
+                                html.Tr([
+                                   html.Td(html.P("Enerji Verimliliği")),
+                                   html.Td([html.Div(dcc.Input(id='input-verimlilik-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
+                                ]),
+                                html.Tr([
+                                   html.Td(html.P("Kapasite Faktörü")),
+                                   html.Td([html.Div(dcc.Input(id='input-kapasiteFaktoru-on-submit', value = 0, type='text', className="form-control",style={"color": "gray"} )),]),
+                                ]),
+                               
+                               
+                             
+                               
+                                
+                               
                            ]),
                             html.Button('Uygula', id='submit-btn3-val', n_clicks=0, className = "btn btn-info", style = {"margin":"20px","font-size": "18px", "color": "white", "vertical-align":"middle"}),
                             html.Div(id='my-output2'),
@@ -163,6 +175,7 @@ html.P('Tüm kriter ağırlıklarını kendim girmek istiyorum.', style = {"font
                     html.Div([
                         html.Div([
                            html.P('Tüm kriter ağırlıklarını SWARA yöntemi ile belirlemek istiyorum.', style = {"font-size": "18px", "padding": "20px", "color": "white","height":"80px", 'background-color' : "rgba(72, 82, 105)","vertical-align":"middle"}),
+                              html.P(' Eğer bu ağırlıklandırma yöntemini tercih ederseniz kriterlerin ikili karşılaştırmalarını yapmanız beklenmektedir. Öncelikle size göre en önemli olan kritere 1 en az önemli olan kritere ise 14 olacak şekilde bir sıralama gerçekleştirmelisiniz. Ardından oluşturulan yeni liste düzeyinde her bir kriterin kendinden sonra gelen kritere göre önem yüzdelerini belirlemelisiniz. Örn: İlk sırada ki kriter ikinci sıradaki kritere göre %20 daha önemliyse bu durumda ikinci kriterin karşısındaki boşluğa 0.2 girmelisiniz. ', style = {"font-size": "16px", "padding": "20px", "color": "white"}),
                               html.Table([
                                html.Tr(
                                     [

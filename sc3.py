@@ -143,30 +143,25 @@ def display1(value):
     labels = ['Kömür','Doğalgaz','Hidro','Rüzgâr','Günes','Jeotermal','Biyokütle']
 
 
-    fig = make_subplots(rows=2, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}], 
-                                            [{'type':'domain'}, {'type':'domain'}]])
+    fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
     fig.add_trace(go.Pie(labels=labels, values=mevcut_ilk, name="2020 Üretim"),
                 1, 1)
-    fig.add_trace(go.Pie(labels=labels, values=mevcut, name="2040 Üretim"),
+    fig.add_trace(go.Pie(labels=labels, values=mevcut, name= str(dataGlobals.seciliTarih) + " Üretim"),
                 1, 2)
-    fig.add_trace(go.Pie(labels=labels, values=mevcutkg_ilk, name="2020 Kurulu Güç"),
-                2, 1)
-    fig.add_trace(go.Pie(labels=labels, values=mevcutkg_son, name="2040 Kurulu Güç"),
-                2, 2)
+    # fig.add_trace(go.Pie(labels=labels, values=mevcutkg_ilk, name="2020 Kurulu Güç"),
+    #             2, 1)
+    # fig.add_trace(go.Pie(labels=labels, values=mevcutkg_son, name= str(dataGlobals.seciliTarih) + " Kurulu Güç"),
+    #             2, 2)
     # Use `hole` to create a donut-like pie chart
-    fig.update_traces(hole=.6, hoverinfo="label+percent+name")
+    fig.update_traces(hole=.5, hoverinfo="label+percent+name")
 
-    fig.update_layout(height=700, width=950,
+    fig.update_layout(
         title_text="Santrallere Göre Elektrik Üretimi 2020-2040",
         # Add annotations in the center of the donut pies.
-        annotations=[dict(text='2020 <br>Üretim', x=0.17, y=0.83, font_size=15, showarrow=False, 
-                        font=dict(size=14, color="#ffffff")),
-                    dict(text='2040 <br>Üretim', x=0.83, y=0.83, font_size=15, showarrow=False, 
-                        font=dict(size=14, color="#ffffff")),
-                    dict(text='2020 <br>Kurulu Güç', x=0.15, y=0.15, font_size=15, showarrow=False, 
-                        font=dict(size=14, color="#ffffff")),
-                    dict(text='2040 <br>Kurulu Güç', x=0.85, y=0.15, font_size=15, showarrow=False, 
-                        font=dict(size=14, color="#ffffff"))])
+        annotations=[dict(text='2020 <br>Üretim', x=0.17, y=0.5, font_size=15, showarrow=False, 
+                        font=dict(size=14, color="#fff")),
+                    dict(text= str(dataGlobals.seciliTarih) + '<br>Üretim', x=0.83, y=0.5, font_size=15, showarrow=False, 
+                        font=dict(size=14, color="#fff"))])
 
     fig.update_layout({
         

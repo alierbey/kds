@@ -10,10 +10,7 @@ import dataGlobals as dataGlobal
 
 
 txtContent1 = """
-Elektrik tahmini temelde bir 
-
-zaman serisi problemidir. Zaman serileri ile yapılacak tahmin çalışmalarında çok sayıda yöntem kullanılabilmektedir. Her yöntemin için verilerin bir dizi ön işleme tabi tutulması gerekmektedir. Bu sebeple verilere bir dizi ön işlem uygulanarak seçtiğiniz algoritmaya uygun hale getirilecektir. Bu bölümde öncelikle tahmin problemi için belirtmeniz gereken bazı parametreler bulunmaktadır. 
-
+Elektrik tüketim tahmini temelde bir zaman serisi problemidir. Zaman serileri ile yapılacak tahmin çalışmalarında çok sayıda yöntem kullanılabilmektedir. Kullanmakta olduğunuz KDS’de LSTM (Long Short Term Memory) algoritması kullanılmıştır. Bu bölümde hangi yıla kadar tahmin yapılacağını belirlemeniz yeterli olmaktadır. 
 """
 txtContent2 = """
 Karar verme problemi çözümünde ise en temel gereksinimlerden biri kriterlerin ağırlıklandırılmasıdır. Kullanmakta olduğunuz Web Tabanlı Karar Destek Sistemi’nde (WTKDS) sizin seçiminizle uygulanacak Çok Kriterli Karar Verme Yöntemleri (ÇKKVY) için ağırlık belirleme süreci farklı şekillerde uygulanabilmektedir. 
@@ -24,13 +21,12 @@ Bu bölümde hem tahmin probleminin hem de karar probleminin çözümünde kulla
 
 pageConsumptionForecast = html.Div(
     [
-        html.H3("Consumption Forecast"),
+        html.H3("Tahmin Parametreleri"),
               html.Div([
                 html.Div([
                     html.Div([
                          html.P(txtContent1,style = {'padding':"1rem"}),
-                         html.P(txtContent2,style = {'padding':"1rem"}),
-                         html.P(txtContent3,style = {'padding':"1rem"}),
+                     
                          html.Hr(),
                           html.Div([
                          html.Table([

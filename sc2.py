@@ -130,7 +130,7 @@ def display1(value):
                                             #[{'type':'domain'}, {'type':'domain'}]])
     fig.add_trace(go.Pie(labels=labels, values=mevcut, name="2020 Üretim"),
               1, 1)
-    fig.add_trace(go.Pie(labels=labels, values=beklenen_uretim, name="2040 Üretim"),
+    fig.add_trace(go.Pie(labels=labels, values=beklenen_uretim, name= str(dataGlobals.seciliTarih) + " Üretim"),
                 1, 2)
     # fig.add_trace(go.Pie(labels=labels, values=mevcutkg, name="2020 Kurulu Güç"),
     #               2, 1)
@@ -139,12 +139,12 @@ def display1(value):
     # Use `hole` to create a donut-like pie chart
     fig.update_traces(hole=.5, hoverinfo="label+percent+name")
 
-    fig.update_layout(height=600, width=800,
+    fig.update_layout(
         title_text="Santrallere Göre Elektrik Üretimi 2020-2040",
         # Add annotations in the center of the donut pies.
         annotations=[dict(text='2020 <br>Üretim', x=0.17, y=0.5, font_size=15, showarrow=False, 
                         font=dict(size=14, color="#fff")),
-                    dict(text='2040 <br>Üretim', x=0.83, y=0.5, font_size=15, showarrow=False, 
+                    dict(text=str(dataGlobals.seciliTarih) + '<br>Üretim', x=0.83, y=0.5, font_size=15, showarrow=False, 
                         font=dict(size=14, color="#fff"))])
                     
 

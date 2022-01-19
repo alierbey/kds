@@ -1,7 +1,7 @@
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
-import bullet as bl
+
 import sunburst
 import table3 
 # import electric
@@ -29,19 +29,20 @@ import pageIntegrative8
 import pageIntegrative9
 import style
 import dataGlobals as dataGlobal
+import bullet
 
 
 
 pageScriptive = html.Div(
     [
-        html.H3("Prescriptive"),
+        html.H3("Kuralcı"),
         html.Hr(),
         html.Div([
             html.Div([
                 html.Div([
             
                     html.Div([
-                        html.H6("Elektrik Tüketiminde Yıllık Değişim (%)", style = {"padding":20, "text-align":"center"}),
+                        html.H6("Elektrik Tüketiminde Beklenen Yıllık Değişim (%)", style = {"padding":20, "text-align":"center"}),
                         prs_gauge2.gauge2
                     ],style = {'background-color' : style.cardBackColor['back'], "padding-bottom": 40,
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})
@@ -146,25 +147,17 @@ pageScriptive = html.Div(
             html.Div([
                 html.Div([
                     html.Div([
-                           html.H6("Kurulu Güç Bazında Verimlilik ", style = {"padding-top":20, "text-align":"center"}),
+                           html.H6("Üretim / Kurulu Güç (Üretim Verimliliği Katsayısı) ", style = {"padding-top":20, "text-align":"center"}),
                            dcc.Graph(figure=prs_gauge3.fig)
                         #    prs_gauge3.fig
                        
-                    ]),
-                ],style = {'background-color' : style.cardBackColor['back'],
-            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'}),          
-            ],className="col-xl-6",),
-            html.Div([
-                html.Div([
-                    html.Div([
-                    #   dcc.Graph(figure=pageIntegrative4.fig)
                    
-                     html.H6("Santral Türlerine Göre İstihdama Katkı", style = {"padding-top":20, "text-align":"center"}),
-                    prs_bar2.fig 
+                   
+                    
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)' ,"padding-bottom":0})            
-            ],className="col-xl-6",)
+            ],className="col-xl-12",)
         ],className="row"),
         html.Br(),
         html.Div([
@@ -183,11 +176,14 @@ pageScriptive = html.Div(
                     #   dcc.Graph(figure=pageIntegrative7.fig) 
                     # dcc.Graph(figure=prs_gauge4.fig)
                     # prs_gauge4.fig 
-                    
 
-                       html.H6("Elektrik Üretiminde Planlanan Değişim", style = {"padding":20, "text-align":"center"}),
+                     html.H6("Santral Türlerine Göre İstihdama Katkı", style = {"padding-top":20, "text-align":"center"}),
+                     prs_bar2.fig 
+
+                        #  html.H6("Elektrik Üretiminde Planlanan Değişim", style = {"padding":20, "text-align":"center"}),
                        
-                        dcc.Graph(figure=bl.fig)
+                        # dcc.Graph(figure=bl.fig)
+                        # bullet.fig
 
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],

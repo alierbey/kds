@@ -12,7 +12,7 @@ import pred_gstl
 
 pagePredictive = html.Div(
     [
-            html.H3("Predictive"),
+            html.H3("öngörücü"),
                 html.Div([
                     html.Div([
                          html.Div([

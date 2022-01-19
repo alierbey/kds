@@ -8,6 +8,9 @@ import sc3
 import sc2
 import sc1
 from app import app
+import sc_card1
+import sc_card2
+import sc_card3
 
 
 
@@ -15,9 +18,10 @@ import style
 
 pageIntegrative = html.Div(
     [
-        html.H3("Integrative"),
+        html.H3("Senaryolar"),
         html.Hr(),
         html.Div([
+             html.Div([
             html.Div([
                 html.Div([
                     html.Div([
@@ -27,8 +31,21 @@ pageIntegrative = html.Div(
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
-            ],className="col-xl-12",),
+            ],className="col-xl-8",),
+             html.Div([
+                 
+                html.Div([
+                    html.Div([
+                     sc_card1.fig
+                     
+                        # dcc.Graph(figure=sc1.fig)
+                    ])
+                ],style = {'background-color' : style.cardBackColor['back'],
+            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
+            ],className="col-xl-4",),
+               ],className="row"),
             html.Hr(),
+            html.Div([
             html.Div([
                 html.Div([
                     html.Div([
@@ -39,8 +56,21 @@ pageIntegrative = html.Div(
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
-            ],className="col-xl-12",),
+            ],className="col-xl-8",),
+            html.Div([
+                 
+                html.Div([
+                    html.Div([
+                     sc_card2.fig
+                     
+                        # dcc.Graph(figure=sc1.fig)
+                    ])
+                ],style = {'background-color' : style.cardBackColor['back'],
+            'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
+            ],className="col-xl-4",),
+               ],className="row"),
             html.Hr(),
+            html.Div([
              html.Div([
                 html.Div([
                     html.Div([
@@ -49,9 +79,19 @@ pageIntegrative = html.Div(
                     ])
                 ],style = {'background-color' : style.cardBackColor['back'],
             'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
-            ],className="col-xl-12",)
+            ],className="col-xl-8",),
+                   html.Div([
+                 
+                html.Div([
+                    html.Div([
+                     sc_card3.fig
+                    ])
+                ],style = {'background-color' : style.cardBackColor['back'],'box-shadow': '2px 5px 5px 1px rgba(30, 47, 123, .5)'})            
+            ],className="col-xl-4",),
+        ],className="row"),       
+      
         ],className="row"),
-        html.Hr(),   
+       
        
     ], 
 )

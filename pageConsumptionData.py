@@ -11,14 +11,12 @@ import numpy as np
 import dataGlobals
 
 txtContent = """
-Elektrik tüketim tahmini ve bu tahmin doğrultusunda santral dağılımının yeniden belirlenmesi sürecinde çok sayıda veri kullanılmaktadır. Elde edilen sonucun duyarlılığının belirlenebilmesi için kullanılan tüm verilerde yüzdesel değişiklikler yapılması gerekebilmektedir. 
-Bu bölümde hem tahmin probleminin hem de karar probleminin çözümünde kullanılacak parametrelerde istenen değişikliklerin yapılabilmesi için bir alan oluşturulmuştur.
-Herhangi bir değişiklik yapmak istemezseniz bu bölümü geçebilirsiniz.  
+Elektrik tüketim tahmini ve bu tahmin doğrultusunda santral dağılımının yeniden belirlenmesi sürecinde çok sayıda veri kullanılmaktadır. Elde edilen sonucun duyarlılığının belirlenebilmesi için kullanılan tüm verilerde yüzdesel değişiklikler yapılması gerekebilmektedir. Bu bölümde tahmin probleminin çözümünde kullanılacak parametrelerde istenen değişikliklerin yapılabilmesi için bir alan oluşturulmuştur. Herhangi bir değişiklik yapmak istemezseniz bu bölümü geçebilirsiniz.  
 """
 
 pageConsumptionData = html.Div(
     [
-        html.H3("What - If"),
+        html.H3("Eğer - Ne"),
               html.Div([
                 html.Div([
                     html.Div([

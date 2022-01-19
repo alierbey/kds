@@ -50,7 +50,7 @@ gauge2 = html.Div([
     ),
     dcc.Graph(id="map22"),
     html.H6("1980 - 2020 yılları arasında", style = {"padding-top":0, "text-align":"center", "color":"gray"}),
-    html.H6(" ortalama yıllık değişimi = %6.63", style = {"padding-top":0, "text-align":"center", "color":"gray"}),
+    html.H6(" ortalama yıllık değişim = %6.63", style = {"padding-top":0, "text-align":"center", "color":"gray"}),
 ])
 
 @app.callback(

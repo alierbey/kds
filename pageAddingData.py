@@ -13,20 +13,20 @@ import time
 
 
 txtContent = """
-Karar Destek Sisteminde çok sayıda veri kullanılmakta olup, bu veriler üzerinde çok sayıda veri önişleme yöntemi uygulanmaktadır. Ayrıca uygulanan analitik yöntemlerin çoğu verinin formatına bağlı olarak çalışmaktadır. Bu sebeple yeni veri yüklenebilmesi için aşağıdaki şartların sağlanması gerekmektedir.
+Karar Destek Sisteminde çok sayıda veri kullanılmakta olup, bu veriler üzerinde çok sayıda veri önişleme yöntemi uygulanmaktadır. Ayrıca uygulanan analitik yöntemlerin çoğu verinin formatına bağlı olarak çalışmaktadır. Bu sebeple verilerin kolaylıkla düzenlenebilmesi için aşağıdaki şartların sağlanması gerekmektedir.
 """
 pageAddingData = html.Div(
     [
-        html.H3("Adding Data"),
+        html.H3("Veri Düzenleme"),
               html.Div([
                 html.Div([
                     html.Div([
                         html.P(txtContent, style = {'padding':"1rem"}),
                         html.Ul([
-                             html.Li("Öncelikle hangi veri türüne ekleme/silme işlemi uygulanacağı seçimi yapılmalıdır. "),
-                             html.Li("Tüketim verileri ay bazlı zaman serisi verileri olduğu için veritabanında yer alan verilerin bir kısmını silebilir veya değiştirebilirsiniz."),
-                             html.Li("Santral seçim kriterleri ile ilgili santral türü bazlı veriler yer aldığı için ilgili kriterle ilgili verileri değiştirebilir, bu verileri silebilir veya ekleyebilirsiniz."),
-                             html.Li("•	Eksik veri tanımlanması durumunda Veri Madenciliği yöntemleriyle eksik veriler tamamlanacaktır. Bu sebeple sonuçların gerçeğe daha yakın olması için eksik veri bırakmamanız önemlidir."),     
+                             html.Li("Öncelikle yıl bilgisi seçilerek ilgili verilere ulaşım sağlanmalıdır. "),
+                             html.Li("Bu bölümde ekrana gelen verilerin bir kısmını silebilir veya değiştirebilirsiniz."),
+                             html.Li("Eksik veri tanımlanması durumunda Veri Madenciliği yöntemleriyle eksik veriler tamamlanacaktır. Bu sebeple sonuçların gerçeğe daha yakın olması için eksik veri bırakmamanız önemlidir."),
+                             html.Li("Reset butonuna tıklanması durumunda veri ham haline geri dönmektedir."),     
                         ]),
                         html.Table([
                             html.Tr([
